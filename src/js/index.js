@@ -233,7 +233,6 @@ function applyTexts(lang) {
     text($("navGenerators"), t.ui.navGenerators);
     text($("navApi"), t.ui.navApi);
     text($("navCode"), t.ui.navCode);
-    text($("navInspiration"), t.ui.navInspiration);
     text($("navFeedback"), t.ui.feedback);
 
     text($("langLabelHead"), t.ui.langLabel);
@@ -247,7 +246,6 @@ function applyTexts(lang) {
 
     setHtml($("footerAbout"), t.ui.footerAbout);
     text($("footGitHub"), t.ui.navCode);
-    text($("footSource"), t.ui.navInspiration);
     text($("footApi"), t.ui.navApi);
     text($("footFeedback"), t.ui.feedback);
     text($("langLabelFoot"), t.ui.langLabel);

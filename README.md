@@ -14,6 +14,8 @@ Les formats disponibles dépendent du générateur : images PNG ou SVG, données
 
 Le français est proposé par défaut ; le sélecteur de l'accueil permet de retrouver les libellés anglais. Les nouveaux noms de lieux suivent la langue choisie ; les noms personnalisés et les cartes importées sont conservés. La traduction des menus et réglages reste progressive : certains textes avancés peuvent encore apparaître en anglais.
 
+Le projet prend volontairement en charge uniquement le français et l'anglais. Pour proposer une autre langue, contactez [StellarNear sur GitHub](https://github.com/StellarNear), par exemple en ouvrant une discussion ou une issue sur ce dépôt.
+
 ### Principales évolutions de la version reprise
 
 - Ressources locales et application web installable, pour une utilisation possible hors connexion.

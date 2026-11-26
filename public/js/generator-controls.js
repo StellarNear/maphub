@@ -184,7 +184,12 @@
         var saved;
         try { saved = localStorage.getItem("lang"); }
         catch (error) { console.warn("Language preference could not be read:", error); }
-        return (query || saved || "fr").toLowerCase().split("-")[0] === "fr" ? "fr" : "en";
+        var candidates = [query, saved];
+        for (var i = 0; i < candidates.length; i++) {
+            var lang = (candidates[i] || "").toLowerCase().split("-")[0];
+            if (lang === "fr" || lang === "en") return lang;
+        }
+        return "fr";
     }
 
     // Generators rewrite their URL as maps change; keep the initial choice stable.

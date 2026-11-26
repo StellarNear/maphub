@@ -50,8 +50,6 @@
         <nav aria-label="Navigation">
             <a class="navlink" href="/api.html" id="navApi"></a>
             <a class="navlink" href="https://{{GITHUB}}" target="_blank" rel="noopener" id="navCode"></a>
-            <a class="navlink" href="https://{{PRIMARY_SOURCE}}" target="_blank" rel="noopener" id="navInspiration"></a>
-
             <span class="lang" aria-label="Language">
           <label id="langLabelHead" for="langSelectHead"></label>
           <select id="langSelectHead"></select>
@@ -61,6 +59,9 @@
 </header>
 
 <main id="main" class="container">
+    <div class="home-banner">
+        <img src="/img/og_banner.png" alt="" width="1200" height="630" />
+    </div>
     <section class="hero" aria-label="Intro">
         <div class="panel intro" aria-label="Project description">
             <h2 id="introTitle"></h2>
@@ -112,7 +113,6 @@
 
             <div class="footlinks" aria-label="Links">
                 <a class="btn" href="https://{{GITHUB}}" target="_blank" rel="noopener" id="footGitHub"></a>
-                <a class="btn" href="https://{{PRIMARY_SOURCE}}" target="_blank" rel="noopener" id="footSource"></a>
                 <a class="btn" href="/api.html" id="footApi"></a>
 
                 <button class="btn primary" id="pwaInstallBtn" type="button" aria-disabled="true" hidden>PWA</button>

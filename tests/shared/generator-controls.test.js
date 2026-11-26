@@ -29,6 +29,12 @@ describe("generator language", () => {
         expect(controls("?lang=en", "fr").mapHubDistrictNoun("quarter")).toBe("quarter");
     });
 
+    it("ignores unsupported languages and falls back to a supported preference or French", () => {
+        expect(controls("", "it").mapHubTranslateMenu("New city")).toBe("Nouvelle ville");
+        expect(controls("?lang=zh", "en").mapHubTranslateMenu("New city")).toBe("New city");
+        expect(controls("?lang=pt", "uk").mapHubTranslateMenu("New city")).toBe("Nouvelle ville");
+    });
+
     it("keeps the language when a generator rewrites its URL", () => {
         const app = controls("?lang=en", "fr");
         app.location.search = "?seed=42";
