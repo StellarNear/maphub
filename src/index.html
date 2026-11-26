@@ -26,11 +26,11 @@
     <meta name="twitter:image" content="https://{{HOMEPAGE}}/img/og_banner.png">
 
 
-    <link rel="manifest" href="/manifest.webmanifest" />
-    <link rel="apple-touch-icon" href="/img/icon-192.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/img/icon-192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/img/icon-512.png" />
-    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="manifest" href="{{BASE_PATH}}manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="{{BASE_PATH}}img/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="{{BASE_PATH}}img/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="{{BASE_PATH}}img/icon-512.png" />
+    <link rel="stylesheet" href="{{BASE_PATH}}css/styles.css" />
 
     <title>{{NAME_FULL}}</title>
 </head>
@@ -39,7 +39,7 @@
 
 <header>
     <div class="container head-inner">
-        <a class="brand" href="/" aria-label="Home">
+        <a class="brand" href="{{BASE_PATH}}" aria-label="Home">
             <span class="logo" aria-hidden="true"></span>
             <span>
           <h1 class="brand-title" id="brandTitle"></h1>
@@ -48,7 +48,7 @@
         </a>
 
         <nav aria-label="Navigation">
-            <a class="navlink" href="/api.html" id="navApi"></a>
+            <a class="navlink" href="{{BASE_PATH}}api.html" id="navApi"></a>
             <a class="navlink" href="https://{{GITHUB}}" target="_blank" rel="noopener" id="navCode"></a>
             <span class="lang" aria-label="Language">
           <label id="langLabelHead" for="langSelectHead"></label>
@@ -60,7 +60,7 @@
 
 <main id="main" class="container">
     <div class="home-banner">
-        <img src="/img/og_banner.png" alt="" width="1200" height="630" />
+        <img src="{{BASE_PATH}}img/og_banner.png" alt="" width="1200" height="630" />
     </div>
     <section class="hero" aria-label="Intro">
         <div class="panel intro" aria-label="Project description">
@@ -113,7 +113,7 @@
 
             <div class="footlinks" aria-label="Links">
                 <a class="btn" href="https://{{GITHUB}}" target="_blank" rel="noopener" id="footGitHub"></a>
-                <a class="btn" href="/api.html" id="footApi"></a>
+                <a class="btn" href="{{BASE_PATH}}api.html" id="footApi"></a>
 
                 <button class="btn primary" id="pwaInstallBtn" type="button" aria-disabled="true" hidden>PWA</button>
                 <small id="pwaInstallHint" class="muted" hidden></small>
@@ -132,7 +132,7 @@
         </div>
     </div>
 </footer>
-<script src="/js/index.js"></script>
+<script src="{{BASE_PATH}}js/index.js"></script>
 <noscript>
     <div class="container" style="padding:16px;">
         <div class="panel">
@@ -141,6 +141,6 @@
     </div>
 </noscript>
 
-<script src="/js/pwa-register.js"></script>
+<script src="{{BASE_PATH}}js/pwa-register.js"></script>
 </body>
 </html>

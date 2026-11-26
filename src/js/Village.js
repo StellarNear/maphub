@@ -49320,7 +49320,7 @@ var $lime_init = function (E, u) {
                 a = new La;
                 a.h.def_font = {
                     name: "Cinzel",
-                    url: "/css/Cinzel_wght_700_swap.css"
+                    url: FuncProto.paramsUrlString(params.routes.homepage) + "css/Cinzel_wght_700_swap.css"
                 };
                 return a
             }(this);

@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import * as process from "node:process";
 import { viteStaticCopy } from "vite-plugin-static-copy";
+import { BASE_PATH } from "./site.config.mjs";
 
 function collectHtmlInputs(rootDir) {
     const inputs = {};
@@ -59,7 +60,7 @@ export default defineConfig(() => {
     }
 
     return {
-        base: "/",
+        base: BASE_PATH,
         root: "./src",
         publicDir: "../public",
         plugins: [

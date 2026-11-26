@@ -51626,7 +51626,7 @@ var $lime_init = function (A, t) {
                 a = new Qa;
                 a.h.default_font = {
                     name: "IM Fell Great Primer",
-                    url: "/css/IM_Fell_Great_Primer_swap.css",
+                    url: FuncProto.paramsUrlString(params.routes.homepage) + "css/IM_Fell_Great_Primer_swap.css",
                     generic: "serif"
                 };
                 return a

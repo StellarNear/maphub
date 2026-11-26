@@ -292,7 +292,7 @@
             var message = lang === "fr"
                 ? "Revenir à l'accueil ? Votre travail non exporté sera perdu."
                 : "Return to the hub? Your unexported work will be lost.";
-            if (confirm(message)) location.assign("/");
+            if (confirm(message)) location.assign(new URL("../../", location.href).pathname);
         });
         var button = document.createElement("button");
         button.type = "button";

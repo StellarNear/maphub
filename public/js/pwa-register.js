@@ -16,8 +16,8 @@
     }
 
     function registerSW() {
-        var swUrl = "/sw.js?v={{VERSION}}";
-        var opts = { scope: "/" };
+        var swUrl = "{{BASE_PATH}}sw.js?v={{VERSION}}";
+        var opts = { scope: "{{BASE_PATH}}" };
         try { opts.updateViaCache = "none"; } catch (_) {}
 
         navigator.serviceWorker

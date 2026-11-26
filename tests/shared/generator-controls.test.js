@@ -6,8 +6,9 @@ const script = readFileSync(new URL("../../public/js/generator-controls.js", imp
 
 function controls(search = "", saved = null) {
     const context = {
+        URL,
         URLSearchParams,
-        location: { search },
+        location: { search, href: "https://example.com/to/cave/" },
         localStorage: { getItem: () => saved },
         console,
     };
@@ -104,5 +105,8 @@ describe("generator language", () => {
         app.confirm = () => true;
         buttons[0].events.click();
         expect(destination).toBe("/");
+        app.location.href = "https://example.com/suriel/to/cave/?lang=fr";
+        buttons[0].events.click();
+        expect(destination).toBe("/suriel/");
     });
 });

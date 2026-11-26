@@ -17,21 +17,21 @@ img { border: 0; }
 
 @font-face{
     font-family: "IM Fell Great Primer";
-    src: url("/fonts/IMFellGreatPrimer-Regular.woff") format("woff");
+    src: url("../fonts/IMFellGreatPrimer-Regular.woff") format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face{
     font-family: "Share Tech";
-    src: url("/fonts/ShareTech-Regular.woff") format("woff");
+    src: url("../fonts/ShareTech-Regular.woff") format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face{
     font-family: "Share Tech Mono";
-    src: url("/fonts/ShareTechMono-Regular.woff") format("woff");
+    src: url("../fonts/ShareTechMono-Regular.woff") format("woff");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -108,7 +108,7 @@ header {
     display: inline-block;
     width: 36px;
     height: 36px;
-    background-image: url("/img/ico_full.png");
+    background-image: url("../img/ico_full.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

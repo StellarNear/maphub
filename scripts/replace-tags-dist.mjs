@@ -11,7 +11,6 @@ import { TAGS } from "../static.config.mjs";
 const DIST_DIR_NAME = "dist";
 const PAGES_DIR_NAME = "to";
 const URL_ROOT = "/";
-const URL_PAGES_PREFIX = "/to/";
 const STREAM_ENCODING = "utf8";
 const DOTFILE_PREFIX = ".";
 const PATH_PARENT_PREFIX = "..";
@@ -44,7 +43,7 @@ function makeTmpPath(filePath) {
 
 async function listFileUrls(dirPath) {
     const absRoot = path.resolve(dirPath);
-    const out = [URL_ROOT];
+    const out = [TAGS.BASE_PATH];
     const stack = [absRoot];
 
     while (stack.length) {
@@ -66,7 +65,7 @@ async function listFileUrls(dirPath) {
             const rel = path.relative(absRoot, fullAbs).split(URL_QUERY_SEPARATOR_RE, 1)[0];
             if (rel.startsWith(PATH_PARENT_PREFIX) || path.isAbsolute(rel)) continue;
 
-            out.push(URL_ROOT + rel.split(path.sep).join(URL_ROOT));
+            out.push(TAGS.BASE_PATH + rel.split(path.sep).join(URL_ROOT));
         }
     }
 
@@ -153,7 +152,7 @@ async function buildDictionary(distDir) {
         const cfg = PAGES[folder];
         const upper = folder.toUpperCase();
 
-        dict[`ADR_${upper}`] = `${URL_PAGES_PREFIX}${folder}/`;
+        dict[`ADR_${upper}`] = `${TAGS.BASE_PATH}to/${folder}/`;
         dict[`EMBED_PARAMETERS_JSON_${upper}`] = JSON.stringify(cfg.embedParameters);
     }
 

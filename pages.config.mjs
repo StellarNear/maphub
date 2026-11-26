@@ -1,5 +1,6 @@
 import * as ParamsProto from "./src/js/struct/params.js";
 import { createRequire } from "node:module";
+import { BASE_PATH } from "./site.config.mjs";
 const require = createRequire(import.meta.url);
 
 const pkg = require("./package.json");
@@ -35,12 +36,12 @@ function baseEmbedParameters(
             primary_source: addURL(pkg.primary_source, false),
             github: addURL(pkg.github, false),
 
-            homepage: addURL("/"),
-            cave: addURL("/to/cave/"),
-            dwellings: addURL("/to/dwellings/"),
-            mfcg: addURL("/to/mfcg/"),
-            village: addURL("/to/village/"),
-            viewer: addURL("/to/viewer/"),
+            homepage: addURL(BASE_PATH),
+            cave: addURL(`${BASE_PATH}to/cave/`),
+            dwellings: addURL(`${BASE_PATH}to/dwellings/`),
+            mfcg: addURL(`${BASE_PATH}to/mfcg/`),
+            village: addURL(`${BASE_PATH}to/village/`),
+            viewer: addURL(`${BASE_PATH}to/viewer/`),
         },
         flags: {},
         meta: {
@@ -80,7 +81,7 @@ function baseEmbedParameters(
                     "Version Global": pkg.version,
                 },
                 buttons: {
-                    "Go to Home": addURL("/"),
+                    "Go to Home": addURL(BASE_PATH),
                     "Go to Watabou": addURL(pkg.primary_source, false),
                 },
             },

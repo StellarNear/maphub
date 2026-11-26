@@ -25,11 +25,11 @@
   <meta name="twitter:description" content="{{DESCRIPTION}}">
   <meta name="twitter:image" content="https://{{HOMEPAGE}}/img/og_banner.png">
 
-  <link rel="manifest" href="/manifest.webmanifest" />
-  <link rel="apple-touch-icon" href="/img/icon-192.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/img/icon-192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="/img/icon-512.png" />
-  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="manifest" href="{{BASE_PATH}}manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="{{BASE_PATH}}img/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="{{BASE_PATH}}img/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="{{BASE_PATH}}img/icon-512.png" />
+  <link rel="stylesheet" href="{{BASE_PATH}}css/styles.css" />
 
   <title>{{NAME_FULL}} | 404 – Page Not Found</title>
 </head>
@@ -38,7 +38,7 @@
 
 <header>
   <div class="container head-inner">
-    <a class="brand" href="/" aria-label="Home">
+    <a class="brand" href="{{BASE_PATH}}" aria-label="Home">
       <span class="logo" aria-hidden="true"></span>
       <span>
         <h1 class="brand-title" id="brandTitle">{{NAME_FULL}}</h1>
@@ -47,7 +47,7 @@
     </a>
 
     <nav aria-label="Navigation">
-      <a class="navlink" href="/api.html" id="navApi">API</a>
+      <a class="navlink" href="{{BASE_PATH}}api.html" id="navApi">API</a>
       <a class="navlink" href="https://{{GITHUB}}" target="_blank" rel="noopener" id="navCode">GitHub</a>
       <a class="navlink" href="https://{{PRIMARY_SOURCE}}" target="_blank" rel="noopener" id="navInspiration">Original source</a>
 
@@ -69,10 +69,10 @@
       </p>
 
       <div class="actions" aria-label="Primary actions">
-        <a class="btn primary" href="/" id="btnHome">Go to home</a>
+        <a class="btn primary" href="{{BASE_PATH}}" id="btnHome">Go to home</a>
         <a class="btn" href="/#generators" id="btnGenerators">Open generators</a>
-        <a class="btn" href="/api.html" id="btnApi">Open API</a>
-        <a class="btn" href="/" id="backBtn">Go back</a>
+        <a class="btn" href="{{BASE_PATH}}api.html" id="btnApi">Open API</a>
+        <a class="btn" href="{{BASE_PATH}}" id="backBtn">Go back</a>
       </div>
 
       <p class="sub" style="margin-top:12px;">
@@ -111,7 +111,7 @@
       <div class="footlinks" aria-label="Links">
         <a class="btn" href="https://{{GITHUB}}" target="_blank" rel="noopener" id="footGitHub">GitHub</a>
         <a class="btn" href="https://{{PRIMARY_SOURCE}}" target="_blank" rel="noopener" id="footSource">Original source</a>
-        <a class="btn" href="/api.html" id="footApi">API</a>
+        <a class="btn" href="{{BASE_PATH}}api.html" id="footApi">API</a>
 
         <span class="lang" aria-label="Language">
           <label id="langLabelFoot" for="langSelectFoot">Language:</label>
@@ -339,7 +339,7 @@
       on(back, "click", function (e) {
         try { e.preventDefault(); } catch (err) {}
         if (window.history && window.history.length > 1) window.history.back();
-        else window.location.href = "/";
+        else window.location.href = "{{BASE_PATH}}";
       });
     }
 
@@ -352,7 +352,7 @@
     function boot() {
       initBase();
 
-      loadJSON("/languages.json", function (err, data) {
+      loadJSON("{{BASE_PATH}}languages.json", function (err, data) {
         if (!err && data) I18N = data;
         if (!I18N || typeof I18N !== "object") I18N = {};
         initLanguage();

@@ -1,21 +1,21 @@
 # Publier le site
 
-Renseigner `homepage` dans `package.json` ne publie rien et ne crée pas de domaine. Le workflow actuel `.github/workflows/publish.yml` est lancé manuellement et envoie `dist/` vers un serveur FTP configuré avec des secrets et variables GitHub ; ce n'est pas GitHub Pages. Ne le lancez pas sans vérifier son serveur et sa configuration : la synchronisation distante peut supprimer des fichiers.
+Le site est prévu pour GitHub Pages à l'adresse `https://stellarnear.github.io/suriel/`. Le workflow `.github/workflows/pages.yml` construit, teste et publie le site sur GitHub, sans serveur FTP. Il est lancé **manuellement**, pas automatiquement à chaque modification.
 
-La section **About** du dépôt GitHub est indépendante de la publication : son bouton en forme d'engrenage permet de renseigner la description, l'adresse du site et les sujets, mais ne déploie pas le site.
+## Première configuration
 
-## Avec GitHub Pages
+1. Commitez et envoyez les modifications, dont le workflow, sur la branche `main` de GitHub.
+2. Sur le dépôt GitHub, ouvrez **Settings > Pages > Build and deployment** et choisissez **GitHub Actions** comme source.
+3. Ouvrez l'onglet **Actions**, sélectionnez **Publish GitHub Pages**, puis **Run workflow**. Choisissez `main` et confirmez avec **Run workflow**.
+4. Attendez la fin des étapes de construction et de déploiement. Si l'une échoue ou attend une approbation, ouvrez l'exécution dans **Actions** pour voir les détails.
+5. Ouvrez l'adresse indiquée dans **Settings > Pages** et vérifiez l'accueil, les générateurs et la page API. La première publication peut prendre quelques minutes.
 
-Le site utilise actuellement des chemins absolus à partir de `/` (ressources, liens, service worker). Il doit donc être servi à la racine d'un domaine. L'adresse habituelle d'un site de projet, `https://UTILISATEUR.github.io/DEPOT/`, ne fonctionnera pas correctement sans adapter les chemins, la configuration Vite et le service worker.
+Pour les mises à jour suivantes, envoyez vos changements sur `main` puis relancez le workflow depuis **Actions**. Le site reste sur la dernière version publiée tant que le workflow n'a pas terminé avec succès.
 
-Pour ce dépôt, l'adresse de projet serait `https://stellarnear.github.io/suriel/` : elle nécessite ces adaptations, ainsi qu'un workflow de construction et déploiement. Dans **Settings > Pages > Build and deployment**, choisissez alors **GitHub Actions**. Un déploiement automatique doit être déclenché par les changements sur `main` et publier le contenu construit de `dist/`, pas les sources.
+La section **About** du dépôt est indépendante de la publication : son bouton en forme d'engrenage permet de renseigner la description, les sujets et l'adresse du site, mais ne déploie rien.
 
-La solution la plus simple sans modifier ces chemins est d'utiliser un dépôt de site utilisateur nommé `UTILISATEUR.github.io`, ou un domaine personnalisé configuré sur GitHub Pages. Dans ce dépôt :
+## Construction locale
 
-1. Construisez le site avec `npm install` puis `npm run build`.
-2. Publiez le **contenu** de `dist/` à la racine de la branche de publication choisie (par exemple `gh-pages`), et envoyez cette branche sur GitHub. Ne publiez pas simplement les sources : les pages des générateurs sont créées pendant la construction.
-3. Dans **Settings > Pages**, choisissez **Deploy from a branch**, puis la branche de publication et le dossier `/ (root)`. Enregistrez et attendez la fin du déploiement. L'adresse apparaît sur cette page.
-4. Pour un domaine personnalisé, configurez le domaine dans **Settings > Pages** et suivez les instructions GitHub pour ses enregistrements DNS et HTTPS.
-5. Mettez `homepage` dans `package.json` à jour avec le domaine réel, sans `https://`, puis reconstruisez et republiez : cette valeur sert notamment aux métadonnées et au sitemap.
+`npm run build` construit le site pour la racine `/` par défaut. Le workflow définit `SITE_BASE_PATH=/suriel/` pour adapter les liens, ressources et service worker au sous-dossier GitHub Pages. `homepage` dans `package.json` indique l'adresse publique utilisée pour les métadonnées et le sitemap ; sa modification seule ne publie rien.
 
-Pour automatiser ces étapes, configurez un workflow GitHub Actions de construction et de déploiement Pages ; le dépôt actuel n'en contient pas. Consultez la [documentation GitHub Pages](https://docs.github.com/fr/pages) pour les prérequis, la visibilité et les domaines personnalisés.
+Le workflow historique `.github/workflows/publish.yml` utilise un serveur FTP externe et est distinct de GitHub Pages. Ne le lancez pas sans vérifier son serveur et sa configuration : la synchronisation distante peut supprimer des fichiers.

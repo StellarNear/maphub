@@ -2,7 +2,8 @@ const VERSION="{{VERSION}}";
 const PREFIX="{{NAME_SHORT}}";
 const STATIC_CACHE=`${PREFIX}-static-${VERSION}`;
 const RUNTIME_CACHE=`${PREFIX}-runtime-${VERSION}`;
-const OFFLINE_URL="/";
+const OFFLINE_URL="{{BASE_PATH}}";
+const OFFLINE_INDEX=OFFLINE_URL+"index.html";
 const PRECACHE_URLS=JSON.parse(String.raw`{{PAGES_ARR}}`);
 
 function isSameOrigin(url){ return url.origin===self.location.origin; }
@@ -38,7 +39,7 @@ async function matchAny(request, ignoreSearch){
 async function precache(){
     const cache = await caches.open(STATIC_CACHE);
     const urls = Array.isArray(PRECACHE_URLS) ? PRECACHE_URLS : [];
-    const set = new Set(urls.concat([OFFLINE_URL, "/index.html"]));
+    const set = new Set(urls.concat([OFFLINE_URL, OFFLINE_INDEX]));
     for(const url of set){
         try{
             const req = new Request(url, {cache:"reload"});
@@ -112,7 +113,7 @@ self.addEventListener("fetch",(event)=>{
             }catch(_){}
             const cached = await matchAny(req, true);
             if(cached) return cached;
-            const offline = await matchAny(OFFLINE_URL, true) || await matchAny("/index.html", true);
+            const offline = await matchAny(OFFLINE_URL, true) || await matchAny(OFFLINE_INDEX, true);
             if(offline) return offline;
             return new Response("Offline",{status:503,headers:{"Content-Type":"text/plain"}});
         })());

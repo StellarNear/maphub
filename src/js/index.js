@@ -1,10 +1,10 @@
 let I18N = {};
 const GENERATORS = [
-    {id: "mfcg", href: "{{ADR_MFCG}}", img: "/img/pico_mfcg.png"},
-    {id: "village", href: "{{ADR_VILLAGE}}", img: "/img/pico_village.png"},
-    {id: "dwellings", href: "{{ADR_DWELLINGS}}", img: "/img/pico_dwellings.png"},
-    {id: "cave", href: "{{ADR_CAVE}}", img: "/img/pico_cave.png"},
-    {id: "viewer", href: "{{ADR_VIEWER}}", img: "/img/pico_viewer.png"}
+    {id: "mfcg", href: "{{ADR_MFCG}}", img: "{{BASE_PATH}}img/pico_mfcg.png"},
+    {id: "village", href: "{{ADR_VILLAGE}}", img: "{{BASE_PATH}}img/pico_village.png"},
+    {id: "dwellings", href: "{{ADR_DWELLINGS}}", img: "{{BASE_PATH}}img/pico_dwellings.png"},
+    {id: "cave", href: "{{ADR_CAVE}}", img: "{{BASE_PATH}}img/pico_cave.png"},
+    {id: "viewer", href: "{{ADR_VIEWER}}", img: "{{BASE_PATH}}img/pico_viewer.png"}
 ];
 
 function loadJSON(url, cb) {
@@ -45,7 +45,7 @@ function loadJSON(url, cb) {
 }
 
 function loadLanguages(cb) {
-    loadJSON("/languages.json", function(err, data){
+    loadJSON("{{BASE_PATH}}languages.json", function(err, data){
         if (!err && data) I18N = data;
         cb && cb(err);
     });
