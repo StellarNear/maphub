@@ -24,7 +24,7 @@
     "compatTitle": "关于版本：",
     "compatText": "{{NAME_SHORT}} {{VERSION}}",
     "legalHtml": "<p><b>法律信息。</b> 本页面按“原样”提供，不提供任何形式的保证。使用风险由您自行承担。</p><p><b>第三方工具。</b> 生成器可能基于或受第三方项目启发。请遵守其许可证及署名要求。</p><p><b>隐私。</b> 本页面刻意不收集个人数据。所选语言会保存在浏览器本地（localStorage），以便记住您的选择。</p>",
-    "footerAbout": "灵感来自：Procgen Arcana（Watabou）。",
+    "footerAbout": "始于 Watabou 的项目，由 voluminor（sunsung）扩展，现由 StellarNear 维护和开发。",
     "copyrightOwner": "{{LICENSE}}",
     "pwaInstall": "安装",
     "pwaInstallUnavailable": "无法安装。",

@@ -10,7 +10,7 @@ import * as DataViewer from "./shared/data/Viewer.js";
 import * as DataProto from "./struct/data.js";
 
 const params = FuncProto.initParams(JSON.parse(String.raw`{{EMBED_PARAMETERS_JSON_VIEWER}}`));
-const baseTitle = document.title;
+const baseTitle = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(document.title) : document.title;
 let mapName = "";
 let isLockedMap = false;
 let returnBuffer = null;
@@ -14077,6 +14077,7 @@ if (params !== null) (function (S, u) {
             Jf.__name__ = "coogee.ui.Dialog";
             Jf.show = function (a, b, c) {
                 null == c && (c = b.getTitle());
+                c = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(c) : c;
                 a = Fd.show(a, b, c,
                     Jf);
                 b.onShow();
@@ -19108,7 +19109,7 @@ if (params !== null) (function (S, u) {
 
                     rootMenu.addItem("Fullscreen", p(this, this.toggleFullscreen), 2 != this.stage.get_displayState());
                     rootMenu.addItem("About", function () {null == Ma.findForm(AboutDialogForm) && Ma.showDialog(new AboutDialogForm)});
-                    true === a ? Ma.showMenuAt(rootMenu, 10, 48) : Ma.showMenu(rootMenu)
+                    true === a ? Ma.showMenuAt(rootMenu, 56, 48) : Ma.showMenu(rootMenu)
 
                     // END //
                 },

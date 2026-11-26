@@ -3062,6 +3062,7 @@ var $lime_init = function (A, t) {
                 "coogee.ui.Dialog";
             ee.show = function (a, b, c) {
                 null == c && (c = b.getTitle());
+                c = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(c) : c;
                 a = Hd.show(a, b, c, ee);
                 b.onShow();
                 return a
@@ -13450,7 +13451,7 @@ var $lime_init = function (A, t) {
                         u.hideMenu();
                         var menu = new dd;
                         scene.onContext(menu);
-                        u.showMenuAt(menu, 10, 48);
+                        u.showMenuAt(menu, 56, 48);
                     };
                     this.stage.set_color(K.colorPaper);
                     sb.preview ||
@@ -13994,12 +13995,12 @@ var $lime_init = function (A, t) {
                 oc.call(this);
                 this.tabs = new ig;
                 this.tabs.set_rowSize(4);
-                this.tabs.addTab("Graphics", this.colors());
-                this.tabs.addTab("Elements", this.elements());
-                this.tabs.addTab("Buildings", this.buildings());
-                this.tabs.addTab("Outline", this.outline());
-                this.tabs.addTab("Text", this.text());
-                this.tabs.addTab("Misc", this.misc());
+                this.tabs.addTab(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Graphics") : "Graphics", this.colors());
+                this.tabs.addTab(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Elements") : "Elements", this.elements());
+                this.tabs.addTab(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Buildings") : "Buildings", this.buildings());
+                this.tabs.addTab(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Outline") : "Outline", this.outline());
+                this.tabs.addTab(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Text") : "Text", this.text());
+                this.tabs.addTab(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Misc") : "Misc", this.misc());
                 this.add(this.tabs);
                 this.tabs.change.add(function (a) {
                     ke.lastTab = a
@@ -14014,7 +14015,7 @@ var $lime_init = function (A, t) {
                     return "Display"
                 },
                 addCheckbox: function (a, b, c, d, f) {
-                    a = new ud(a);
+                    a = new ud(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a);
                     a.set_value(ba.get(b, c));
                     a.changed.add(function (a) {
                         ba.set(b, a);
@@ -14025,7 +14026,7 @@ var $lime_init = function (A, t) {
                 },
                 addDropDown: function (a, b, c, d, f) {
                     this.addLabel(a, d);
-                    a = Rc.ofStrings(c);
+                    a = new Rc(globalThis.mapHubTranslateMenu ? c.map(globalThis.mapHubTranslateMenu) : c, c);
                     a.set_value(ba.get(b));
                     a.set_width(120);
                     a.set_centered(!0);
@@ -14054,14 +14055,14 @@ var $lime_init = function (A, t) {
                     a.add(b)
                 },
                 addLabel: function (a, b) {
-                    a = new Ib(a);
+                    a = new Ib(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a);
                     a.valign = "center";
                     b.add(a)
                 },
                 colors: function () {
                     var a = new gb;
                     a.setMargins(10, 8);
-                    var b = new fb("Color scheme", ia.editColors);
+                    var b = new fb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Color scheme") : "Color scheme", ia.editColors);
                     a.add(b);
                     this.addCheckbox("Thin lines", "thin_lines", !1, a, function (a) {
                         K.thinLines = a;
@@ -14081,7 +14082,8 @@ var $lime_init = function (A, t) {
                     var b = new Pd(2);
                     b.setMargins(0, 8);
                     this.addLabel("Font size", b);
-                    var c = Rc.ofInts(["Small", "Medium", "Large"]);
+                    var sizes = ["Small", "Medium", "Large"];
+                    var c = Rc.ofInts(globalThis.mapHubTranslateMenu ? sizes.map(globalThis.mapHubTranslateMenu) : sizes);
                     c.set_value(ba.get("text_size", 1));
                     c.set_width(120);
                     c.set_centered(!0);
@@ -14181,7 +14183,7 @@ var $lime_init = function (A, t) {
                     });
                     c.outline_fields = d;
                     a.add(b);
-                    b = new fb("Toggle all",
+                    b = new fb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Toggle all") : "Toggle all",
                         function () {
                             var a = c,
                                 b = a,

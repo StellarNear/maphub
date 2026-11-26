@@ -24,7 +24,7 @@
     "compatTitle": "Informazioni sulla build:",
     "compatText": "{{NAME_SHORT}} {{VERSION}}",
     "legalHtml": "<p><b>Informazioni legali.</b> La pagina è fornita «così com'è», senza alcuna garanzia. La usi a tuo rischio.</p><p><b>Strumenti di terze parti.</b> I generatori possono essere basati su o ispirati a progetti di terze parti. Ti preghiamo di rispettarne le licenze e i requisiti di attribuzione.</p><p><b>Privacy.</b> La pagina non raccoglie intenzionalmente dati personali. La lingua selezionata viene salvata localmente nel browser (localStorage) per ricordare la tua scelta.</p>",
-    "footerAbout": "Ispirato a: Procgen Arcana (Watabou).",
+    "footerAbout": "Creato da Watabou, ampliato da voluminor (sunsung) e ora sviluppato da StellarNear.",
     "copyrightOwner": "{{LICENSE}}",
     "pwaInstall": "Installa",
     "pwaInstallUnavailable": "Installazione non disponibile.",

@@ -3044,6 +3044,7 @@ var $lime_init = function (K, v) {
             we.__name__ = "coogee.ui.Dialog";
             we.show = function (a, b, c) {
                 null == c && (c = b.getTitle());
+                c = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(c) : c;
                 a = Jc.show(a, b, c, we);
                 b.onShow();
                 return a
@@ -3057,6 +3058,7 @@ var $lime_init = function (K, v) {
                 __class__: we
             });
             var Lc = function (a, b) {
+                if (globalThis.mapHubTranslateMenu) a = a.map(globalThis.mapHubTranslateMenu);
                 this.update = new gc;
                 var c = this;
                 this.values = b;
@@ -3113,6 +3115,7 @@ var $lime_init = function (K, v) {
             Lc.__super__ = R;
             Lc.prototype = w(R.prototype, {
                 load: function (a, b) {
+                    if (globalThis.mapHubTranslateMenu) a = a.map(globalThis.mapHubTranslateMenu);
                     var c = this;
                     this.labels = a;
                     this.values = b;
@@ -3188,6 +3191,7 @@ var $lime_init = function (K, v) {
             });
             var Cf = function (a) {
                 R.call(this);
+                a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
                 this.tf = Gc.get(a, ia.format(ia.uiFont, ia.smallSize, ia.black));
                 this.tf.set_wordWrap(!0);
                 this.tf.set_x(-2);
@@ -3221,6 +3225,7 @@ var $lime_init = function (K, v) {
             var Vb = function (a, b) {
                 null == b && (b = !1);
                 R.call(this);
+                a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
                 this.tf = Gc.get(a, ia.format(ia.uiFont,
                     b ? ia.smallSize : ia.normalSize, ia.black));
                 this.tf.set_x(-2);
@@ -4178,13 +4183,13 @@ var $lime_init = function (K, v) {
                 this.color = ia.dark;
                 R.call(this);
                 this.tag = a;
-                this.label = Gc.get(a, ia.format(ia.uiFont, ia.smallSize, ia.white));
+                this.label = Gc.get(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a, ia.format(ia.uiFont, ia.smallSize, ia.white));
                 this.label.mouseEnabled = !1;
                 this.addChild(this.label);
                 this.set_buttonMode(!0);
                 this.addEventListener("click", function (d) {
                     d.stopPropagation();
-                    d.shiftKey ? null != b && ma.showToast(b) :
+                    d.shiftKey ? null != b && ma.showToast(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b) :
                         c(a)
                 });
                 this.setSize(this.label.get_width() + 8, this.label.get_height() + 8)
@@ -5671,6 +5676,7 @@ var $lime_init = function (K, v) {
                 return Fa
             };
             zb.getFloorLabel = function (a, b) {
+                if (globalThis.mapHubFloorLabel) return globalThis.mapHubFloorLabel(a, b);
                 switch (a) {
                     case -1:
                         return "B";
@@ -7146,7 +7152,13 @@ var $lime_init = function (K, v) {
             Md.__name__ = "dwellings.model.Namer";
             Md.grammar = null;
             Md.init = function () {
-                if (null == Md.grammar) Me.rng = t.float, Md.grammar = new Bk(JSON.parse(Yb.getText("grammar"))), Md.grammar.addModifiers(Ra.get()), Md.grammar.defaultSelector = Rh;
+                if (null == Md.grammar) {
+                    var grammar = JSON.parse(Yb.getText("grammar"));
+                    Me.rng = t.float;
+                    Md.grammar = new Bk(globalThis.mapHubDwellingGrammar ? globalThis.mapHubDwellingGrammar(grammar) : grammar);
+                    Md.grammar.addModifiers(Ra.get());
+                    Md.grammar.defaultSelector = Rh;
+                }
                 else {
                     var a = .3;
                     null == a && (a = .5);
@@ -9431,6 +9443,10 @@ var $lime_init = function (K, v) {
                 Jb.call(this);
                 this.house = fd.inst;
                 this.modeSelector = new li;
+                if (globalThis.mapHubAddControls) {
+                    this.modeSelector.set_x(110);
+                    this.modeSelector.btnMenu.set_visible(!1);
+                }
                 this.modeSelector.update(ub.planView);
                 this.modeSelector.mode.add(function (b) {
                     a.switchView()
@@ -9451,7 +9467,7 @@ var $lime_init = function (K, v) {
                     var scene = this;
                     globalThis.mapHubOpenMenu = function () {
                         ma.hideMenu();
-                        scene.showContextMenu(10, 48);
+                        scene.showContextMenu(56, 48);
                     };
                     this.stage.addEventListener("touchTap", m(this, this.onTap));
                     this.stage.addEventListener("click", m(this, this.onClick));
@@ -9707,7 +9723,7 @@ var $lime_init = function (K, v) {
                     activate: function () {
                         ub.prototype.activate.call(this);
                         this.stage.addEventListener("mouseDown", m(this, this.onMouseDown));
-                        ma.showToast("Hold Shift to specify the entrance location.")
+                        ma.showToast(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Hold Shift to specify the entrance location.") : "Hold Shift to specify the entrance location.")
                     },
                     deactivate: function () {
                         ub.prototype.deactivate.call(this);
@@ -10531,11 +10547,11 @@ var $lime_init = function (K, v) {
                 this.click = new Yd;
                 R.call(this);
                 this.value = b;
-                this.tf = Gc.get(a, Gc.format("ui_font_mono", 32));
+                this.tf = Gc.get(a, Gc.format("ui_font_mono", 2 < a.length ? 18 : 32));
                 this.tf.mouseEnabled = !1;
                 this.addChild(this.tf);
                 a = this.tf.getCharBoundaries(0);
-                this.setSize(2 * a.width + 2 * Kf.MARGIN, a.height + 2 * Kf.MARGIN);
+                this.setSize(Math.max(2 * a.width, this.tf.get_width()) + 2 * Kf.MARGIN, a.height + 2 * Kf.MARGIN);
                 this.addEventListener("click", m(this,
                     this.onClick))
             };
@@ -10741,13 +10757,12 @@ var $lime_init = function (K, v) {
             qi.prototype = w(Od.prototype, {
                 update: function (a) {
                     this.clear();
-                    null != a.basement && this.addButton("B", -1);
+                    null != a.basement && this.addButton(globalThis.mapHubFloorLabel ? globalThis.mapHubFloorLabel(-1, a.floors.length) : "B", -1);
                     for (var b = 0, c = a.floors.length; b < c;) {
                         var d = b++;
-                        this.addButton(0 ==
-                        d ? "GF" : d + "F", d)
+                        this.addButton(globalThis.mapHubFloorLabel ? globalThis.mapHubFloorLabel(d, a.floors.length) : 0 == d ? "GF" : d + "F", d)
                     }
-                    Ea.detailed && this.addButton("R", a.floors.length)
+                    Ea.detailed && this.addButton(globalThis.mapHubFloorLabel ? globalThis.mapHubFloorLabel(a.floors.length, a.floors.length) : "R", a.floors.length)
                 },
                 __class__: qi
             });
@@ -10756,8 +10771,8 @@ var $lime_init = function (K, v) {
                 this.mode = new gc;
                 Od.call(this);
                 this.btnMenu = this.addButton("=", "menu");
-                this.addButton("P", "plan");
-                this.addButton("E", "elevation");
+                this.addButton(globalThis.mapHubModeLabel ? globalThis.mapHubModeLabel("P") : "P", "plan");
+                this.addButton(globalThis.mapHubModeLabel ? globalThis.mapHubModeLabel("E") : "E", "elevation");
                 this.click.add(m(this, this.onButton))
             };
             h["dwellings.ui.ModeSelector"] = li;
@@ -10837,7 +10852,7 @@ var $lime_init = function (K, v) {
                 var d = a.name;
                 this.txtName = new pc(null != d ? d : "");
                 this.txtName.set_width(240);
-                this.txtName.set_prompt(null != a.type ? Qh.capitalize(a.type.name) : "");
+                this.txtName.set_prompt(null != a.type ? Qh.capitalize(globalThis.mapHubRoomName ? globalThis.mapHubRoomName(a.type.name) : a.type.name) : "");
                 this.txtName.enter.add(function (a) {
                     c.onEnter()
                 });
@@ -10875,10 +10890,10 @@ var $lime_init = function (K, v) {
                 update: function (a) {
                     this.clear();
                     a = fa.entrance.door.dir;
-                    this.addButton("L", a.cw);
-                    this.addButton("F", a);
-                    this.addButton("R", a.ccw);
-                    this.addButton("B", a.op);
+                    this.addButton(globalThis.mapHubSideLabel ? globalThis.mapHubSideLabel("L") : "L", a.cw);
+                    this.addButton(globalThis.mapHubSideLabel ? globalThis.mapHubSideLabel("F") : "F", a);
+                    this.addButton(globalThis.mapHubSideLabel ? globalThis.mapHubSideLabel("R") : "R", a.ccw);
+                    this.addButton(globalThis.mapHubSideLabel ? globalThis.mapHubSideLabel("B") : "B", a.op);
                     this.looped = !0
                 },
                 __class__: oi
@@ -11964,7 +11979,7 @@ var $lime_init = function (K, v) {
                                 d[c];
                             ++c;
                             if (Qc.showNumbers) var q = E.string(a.rooms.indexOf(k) + 1);
-                            else q = k.name, null == q && (q = k.type, q = null != q ? q.name : null);
+                            else q = k.name, null == q && (q = k.type, q = null != q ? globalThis.mapHubRoomName ? globalThis.mapHubRoomName(q.name) : q.name : null);
                             if (null != q && "" != q) {
                                 var l = ca.difference(k.area, g);
                                 0 == l.length && (l = k.area);
@@ -11974,7 +11989,7 @@ var $lime_init = function (K, v) {
                                 var h = q.split(" ");
                                 if (1 == h.length) var n = this.createLabel(q, l);
                                 else n = this.createLabel(q, l), h = this.createLabel(h.join("\n"), l), n = n.get_scaleX() > h.get_scaleX() ? n : h;
-                                .01 > n.get_scaleX() && q != k.name && null != k.type.short && (n = this.createLabel(k.type.short,
+                                .01 > n.get_scaleX() && q != k.name && null != k.type.short && (n = this.createLabel(globalThis.mapHubRoomShort ? globalThis.mapHubRoomShort(k.type.name, k.type.short) : k.type.short,
                                     l));
                                 n.set_x(l.x + l.width / 2);
                                 n.set_y(l.y + l.height / 2);
@@ -53062,7 +53077,7 @@ var $lime_init = function (K, v) {
             qc.okCancel = ["OK", "Cancel"];
             Bc.maxFaceLength = 13;
             Sb.lastTab = 0;
-            jd.hintText = "* Shift+click a tag to learn its effect.";
+            jd.hintText = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("* Shift+click a tag to learn its effect.") : "* Shift+click a tag to learn its effect.";
             zb.MAX_SIZE = 16777216;
             zb.MARGINS = 4;
             zb.embeddedScanned = !1;

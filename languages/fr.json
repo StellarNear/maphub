@@ -7,7 +7,7 @@
   "ui": {
     "skip": "Aller au contenu",
     "brandTitle": "{{NAME_FULL}}",
-    "brandSub": "outils pour la génération et l’édition de cartes",
+    "brandSub": "l'atelier des cartes et des mondes imaginaires",
     "navApi": "API",
     "navCode": "GitHub",
     "navInspiration": "Source",
@@ -24,7 +24,7 @@
     "compatTitle": "À propos de la version :",
     "compatText": "{{NAME_SHORT}} {{VERSION}}",
     "legalHtml": "<p><b>Informations légales.</b> Cette page est fournie « telle quelle », sans aucune garantie. Vous l’utilisez à vos propres risques.</p><p><b>Outils tiers.</b> Les générateurs peuvent être basés sur des projets tiers ou s’en inspirer. Veuillez respecter leurs licences et leurs exigences d’attribution.</p><p><b>Confidentialité.</b> Cette page ne collecte volontairement aucune donnée personnelle. La langue choisie est stockée localement dans le navigateur (localStorage) afin de mémoriser votre choix.</p>",
-    "footerAbout": "Inspiré par : Procgen Arcana (Watabou).",
+    "footerAbout": "Projet initié par <a href='https://watabou.github.io/' target='_blank' rel='noopener'>Watabou</a>, enrichie par <a href='https://github.com/voluminor/maphub' target='_blank' rel='noopener'>voluminor (sunsung)</a>. Súriël est désormais maintenue et développée par <a href='https://github.com/StellarNear' target='_blank' rel='noopener'>StellarNear</a>.",
     "copyrightOwner": "{{LICENSE}}",
     "pwaInstall": "Installer",
     "pwaInstallUnavailable": "L’installation n’est pas disponible.",
@@ -37,9 +37,9 @@
     "cave": {
       "title": "Générateur de grottes / clairières",
       "tag": "carte de lieu",
-      "short": "Un équivalent « one‑page dungeon » pour les environnements naturels : grottes, terriers ou clairières forestières.",
+      "short": "Des aventures en une page pour les environnements naturels : grottes, terriers ou clairières forestières.",
       "desc": [
-        "Ce générateur a été conçu comme un analogue naturel du « one‑page dungeon ». Sur la même base, on peut obtenir un réseau de salles de grotte ou un groupe de clairières forestières reliées.",
+        "Ce générateur imagine des lieux naturels sur une seule page : un réseau de salles souterraines ou un groupe de clairières forestières reliées.",
         "De nombreux réglages sont disponibles via les menus contextuels. Export en PNG/SVG."
       ],
       "features": [
@@ -251,9 +251,9 @@
     "village": {
       "title": "Générateur de village",
       "tag": "carte de village",
-      "short": "Les villages se construisent autour des routes : moins de maisons que dans Medieval Fantasy City, plus de champs et d’arbres.",
+      "short": "Les villages se construisent autour des routes : moins de maisons que dans le générateur de villes, plus de champs et d’arbres.",
       "desc": [
-        "Contrairement à Medieval Fantasy City, ici le village se forme autour des routes. Les maisons sont plus espacées le long de chemins sinueux, et les champs et les arbres donnent à la carte un caractère nettement rural.",
+        "Contrairement au générateur de villes, ici le village se forme autour des routes. Les maisons sont plus espacées le long de chemins sinueux, et les champs et les arbres donnent à la carte un caractère nettement rural.",
         "Export de l’image en PNG/SVG, ainsi que du schéma en JSON/PROTO."
       ],
       "features": [

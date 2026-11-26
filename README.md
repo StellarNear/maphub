@@ -1,10 +1,10 @@
-# Fantasy MapHub Generators
+# Súriël - Cartographe des mondes
 
-Fantasy MapHub rassemble plusieurs générateurs procéduraux de cartes et de plans : villes médiévales fantastiques, villages, bâtiments, grottes et clairières, ainsi qu'une visionneuse 3D.
+Súriël rassemble plusieurs générateurs procéduraux de cartes et de plans : villes médiévales fantastiques, villages, bâtiments, grottes et clairières, ainsi qu'une visionneuse 3D.
 
 ## Origine et attribution
 
-Les générateurs sont issus des travaux de [Watabou](https://watabou.github.io/). Ce dépôt reprend une version adaptée et réunie par [voluminor (sunsung)](https://github.com/voluminor/maphub), qui a notamment ajouté des fonctions d'édition, d'import et d'export. Le présent projet poursuit ce travail.
+Les générateurs sont issus des travaux de [Watabou](https://watabou.github.io/). Ce dépôt reprend une version adaptée et réunie par [voluminor (sunsung)](https://github.com/voluminor/maphub), qui a notamment ajouté des fonctions d'édition, d'import et d'export. Súriël est désormais maintenue et développée par [StellarNear](https://github.com/StellarNear).
 
 ## Utilisation
 
@@ -12,7 +12,7 @@ Ouvrez un générateur depuis l'accueil. Son menu contextuel donne accès à la 
 
 Les formats disponibles dépendent du générateur : images PNG ou SVG, données JSON ou Protobuf, et OBJ pour la visionneuse 3D. L'import d'une carte éditable dans les générateurs de ville et de village nécessite un export étendu : les anciens exports de Watabou ne contiennent pas toutes les données nécessaires à la reprise de l'édition.
 
-Le français est proposé par défaut ; le sélecteur permet de retrouver les libellés anglais. Les menus principaux sont traduits, mais certaines fenêtres et certains textes des générateurs restent en anglais. Dans les générateurs, changer de langue recharge la page : exportez votre travail avant de confirmer. Les noms des quartiers créés dans le générateur de villes suivent la langue choisie ; les cartes importées conservent leurs noms.
+Le français est proposé par défaut ; le sélecteur de l'accueil permet de retrouver les libellés anglais. Les nouveaux noms de lieux suivent la langue choisie ; les noms personnalisés et les cartes importées sont conservés. La traduction des menus et réglages reste progressive : certains textes avancés peuvent encore apparaître en anglais.
 
 ### Principales évolutions de la version reprise
 

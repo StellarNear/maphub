@@ -5212,8 +5212,16 @@ var $lime_init = function (A, r) {
                 null == b && (b = !1);
                 var c = fb.showGlade ? "forest_grammar" : "grammar";
                 Kb.grammar = Kb.cache.h[c];
-                null == Kb.grammar && (Yd.rng = n.float, Kb.grammar = new Ei(JSON.parse(Zb.getText(c))),
-                    Kb.grammar.defaultSelector = Qg, Kb.grammar.addModifiers(db.get()), Kb.grammar.addExternal("proper", Kb.proper), Kb.grammar.addExternal("fantasy", Kb.fantasy), Kb.cache.h[c] = Kb.grammar);
+                if (null == Kb.grammar) {
+                    var grammar = JSON.parse(Zb.getText(c));
+                    Yd.rng = n.float;
+                    Kb.grammar = new Ei(globalThis.mapHubCaveGrammar ? globalThis.mapHubCaveGrammar(grammar, fb.showGlade) : grammar);
+                    Kb.grammar.defaultSelector = Qg;
+                    Kb.grammar.addModifiers(db.get());
+                    Kb.grammar.addExternal("proper", Kb.proper);
+                    Kb.grammar.addExternal("fantasy", Kb.fantasy);
+                    Kb.cache.h[c] = Kb.grammar;
+                }
                 b ? Kb.grammar.flags = [] : Kb.grammar.clearState();
                 b = 0;
                 for (c = a.getTags(); b < c.length;) {
@@ -5853,7 +5861,7 @@ var $lime_init = function (A, r) {
                     rootMenu.addItem("About", function () {
                         null == Fa.findForm(AboutDialogForm) && Fa.showDialog(new AboutDialogForm)
                     });
-                    fromButton ? Fa.showMenuAt(rootMenu, 10, 48) : Fa.showMenu(rootMenu);
+                    fromButton ? Fa.showMenuAt(rootMenu, 56, 48) : Fa.showMenu(rootMenu);
 
                     // END //
 
@@ -6607,7 +6615,7 @@ var $lime_init = function (A, r) {
                 nb.call(this, ["Apply"]);
                 this.onApply = a;
                 a = new qe(2);
-                var c = new Pb("Size");
+                var c = new Pb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Size") : "Size");
                 c.valign = "center";
                 a.add(c);
                 this.intSize = new se(lb.size | 0, .5 * la.hexRadius | 0, 2 * la.hexRadius | 0);
@@ -6617,7 +6625,7 @@ var $lime_init = function (A, r) {
                 this.intSize.set_centered(!0);
                 this.intSize.set_width(60);
                 a.add(this.intSize);
-                c = new Pb("Broken");
+                c = new Pb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Broken") : "Broken");
                 c.valign = "center";
                 a.add(c);
                 this.chkBroken = new lf;
@@ -7093,6 +7101,7 @@ var $lime_init = function (A, r) {
             nf.__name__ = "coogee.ui.Dialog";
             nf.show = function (a, b, c) {
                 null == c && (c = b.getTitle());
+                c = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(c) : c;
                 a = td.show(a, b, c, nf);
                 b.onShow();
                 return a
@@ -8183,13 +8192,13 @@ var $lime_init = function (A, r) {
                 this.color = ia.dark;
                 ha.call(this);
                 this.tag = a;
-                this.label = mc.get(a, ia.format(ia.uiFont, ia.smallSize, ia.white));
+                this.label = mc.get(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a, ia.format(ia.uiFont, ia.smallSize, ia.white));
                 this.label.mouseEnabled = !1;
                 this.addChild(this.label);
                 this.set_buttonMode(!0);
                 this.addEventListener("click", function (d) {
                     d.stopPropagation();
-                    d.shiftKey ? null != b && Fa.showToast(b) : c(a)
+                    d.shiftKey ? null != b && Fa.showToast(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b) : c(a)
                 });
                 this.setSize(this.label.get_width() + 8, this.label.get_height() + 8)
             };
@@ -8795,12 +8804,12 @@ var $lime_init = function (A, r) {
                 },
                 addTab: function (a) {
                     this.grid = new qe(2);
-                    this.tabs.addTab(a, this.grid)
+                    this.tabs.addTab(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a, this.grid)
                 },
                 addColor: function (a, b, c) {
                     var d = this;
                     null == this.grid && this.addTab(null);
-                    var f = new Pb(b);
+                    var f = new Pb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b);
                     this.grid.add(f);
                     b = new Oc;
                     b.setMargins(0, 10);
@@ -8833,7 +8842,7 @@ var $lime_init = function (A, r) {
                 addMultiColor: function (a, b, c) {
                     var d = this;
                     null == this.grid && this.addTab(null);
-                    var f = new Pb(b);
+                    var f = new Pb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b);
                     this.grid.add(f);
                     b = new Oc;
                     b.setMargins(0, 10);
@@ -8875,7 +8884,7 @@ var $lime_init = function (A, r) {
                 },
                 addFloat: function (a, b, c, d, f) {
                     null == this.grid && this.addTab(null);
-                    b = new Pb(b);
+                    b = new Pb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b);
                     this.grid.add(b);
                     c = new kf(c, d, f, 5);
                     this.grid.add(c);
@@ -8890,7 +8899,7 @@ var $lime_init = function (A, r) {
                 },
                 addInt: function (a, b, c, d, f) {
                     null == this.grid && this.addTab(null);
-                    b = new Pb(b);
+                    b = new Pb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b);
                     this.grid.add(b);
                     c = new se(c, d, f, 7);
                     this.grid.add(c);
@@ -8905,10 +8914,10 @@ var $lime_init = function (A, r) {
                 },
                 addEnum: function (a, b, c, d) {
                     null == this.grid && this.addTab(null);
-                    b = new Pb(b);
+                    b = new Pb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b);
                     this.grid.add(b);
-                    c = te.ofStrings(c);
-                    c.set_text(d);
+                    c = new te(globalThis.mapHubTranslateMenu ? c.map(globalThis.mapHubTranslateMenu) : c, c);
+                    c.set_value(d);
                     c.halign = "fill";
                     this.grid.add(c);
                     this.values.push({
@@ -45283,7 +45292,7 @@ var $lime_init = function (A, r) {
             ia.normalSize = 24;
             Pc.okCancel = ["OK", "Cancel"];
             $b.lastTab = 0;
-            pe.hintText = "* Shift+click a tag to learn its effect.";
+            pe.hintText = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("* Shift+click a tag to learn its effect.") : "* Shift+click a tag to learn its effect.";
             La._p0 = new K(-819.2, 0);
             La._p1 = new K(819.2, 0);
             Vb.lx = 0;

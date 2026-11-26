@@ -7,7 +7,7 @@
   "ui": {
     "skip": "Skip to content",
     "brandTitle": "{{NAME_FULL}}",
-    "brandSub": "tools for generating and editing maps",
+    "brandSub": "a cartographer's workshop for imaginary worlds",
     "navApi": "API",
     "navCode": "GitHub",
     "navInspiration": "Original source",
@@ -24,7 +24,7 @@
     "compatTitle": "Build:",
     "compatText": "{{NAME_SHORT}} {{VERSION}}",
     "legalHtml": "<p><b>Legal information.</b> This page is provided “as is”, without any warranties. You use it at your own risk.</p><p><b>Third-party tools.</b> Generators may be based on or inspired by third-party projects. Please comply with their licenses and attribution requirements.</p><p><b>Privacy.</b> The page intentionally does not collect personal data. Your selected language is stored locally in the browser (localStorage) to remember your choice.</p>",
-    "footerAbout": "Inspired by: Procgen Arcana (Watabou).",
+    "footerAbout": "Started by <a href='https://watabou.github.io/' target='_blank' rel='noopener'>Watabou</a>, expanded by <a href='https://github.com/voluminor/maphub' target='_blank' rel='noopener'>voluminor (sunsung)</a>, and now maintained and developed by <a href='https://github.com/StellarNear' target='_blank' rel='noopener'>StellarNear</a>.",
     "copyrightOwner": "{{LICENSE}}",
     "pwaInstall": "Install",
     "pwaInstallUnavailable": "Installation unavailable.",

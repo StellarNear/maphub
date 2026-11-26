@@ -44,4 +44,59 @@ describe("generator language", () => {
         expect(french.centralDistrict).toContain("vieux #districtNoun#");
         expect(french.north).toBe("nord");
     });
+
+    it("translates rooms and navigation labels without changing English abbreviations", () => {
+        const fr = controls("?lang=fr");
+        const en = controls("?lang=en");
+        expect(fr.mapHubRoomName("workshop")).toBe("atelier");
+        expect(fr.mapHubRoomName("La chambre de Jeanne")).toBe("La chambre de Jeanne");
+        expect(fr.mapHubFloorLabel(-1, 2)).toBe("Sous-sol");
+        expect(fr.mapHubFloorLabel(1, 2)).toBe("1er");
+        expect(fr.mapHubSideLabel("F")).toBe("Devant");
+        expect(fr.mapHubModeLabel("E")).toBe("Façade");
+        expect(en.mapHubRoomShort("bathroom", "BTH")).toBe("BTH");
+        expect(en.mapHubFloorLabel(1, 2)).toBe("1F");
+        expect(en.mapHubSideLabel("F")).toBe("F");
+    });
+
+    it("uses French naming rules only when French is selected", () => {
+        for (const [method, key] of [
+            ["mapHubVillageGrammar", "village"],
+            ["mapHubDwellingGrammar", "title"],
+            ["mapHubCaveGrammar", "name"],
+        ]) {
+            const original = { [key]: "original" };
+            expect(controls("?lang=en")[method](original)).toBe(original);
+            expect(original[key]).toBe("original");
+            expect(controls("?lang=fr")[method]({ [key]: "original" })[key]).not.toBe("original");
+        }
+    });
+
+    it("requires confirmation before returning and provides no child language selector", () => {
+        const app = controls();
+        const container = { children: [], appendChild(element) { this.children.push(element); } };
+        app.document = {
+            documentElement: {},
+            createElement(tag) {
+                return {
+                    tag, children: [], events: {},
+                    appendChild(element) { this.children.push(element); },
+                    setAttribute() {},
+                    addEventListener(event, callback) { this.events[event] = callback; },
+                };
+            },
+            getElementById: () => container,
+        };
+        let destination;
+        app.location.assign = (url) => { destination = url; };
+        app.confirm = () => false;
+        app.mapHubAddControls();
+        const buttons = container.children[0].children;
+        expect(buttons.map((element) => element.tag)).toEqual(["button", "button"]);
+        buttons[0].events.click();
+        expect(destination).toBeUndefined();
+        app.confirm = () => true;
+        buttons[0].events.click();
+        expect(destination).toBe("/");
+    });
 });
