@@ -2,6 +2,12 @@
 
 Súriël rassemble plusieurs générateurs procéduraux de cartes et de plans : villes médiévales fantastiques, villages, bâtiments, grottes et clairières, ainsi qu'une visionneuse 3D.
 
+Le **Coffre des cartes connues**, dernière case du hub, permet aussi de parcourir
+les régions et d'explorer les cartes existantes avec zoom et déplacement sur
+ordinateur et mobile. Les images restent matricielles et sont compressées en
+WebP avec perte. Voir la
+[procédure de conversion et ses limites](./docs/known-maps.md).
+
 ## Origine et attribution
 
 Les générateurs sont issus des travaux de [Watabou](https://watabou.github.io/). Ce dépôt reprend une version adaptée et réunie par [voluminor (sunsung)](https://github.com/voluminor/maphub), qui a notamment ajouté des fonctions d'édition, d'import et d'export. Súriël est désormais maintenue et développée par [StellarNear](https://github.com/StellarNear).
@@ -37,9 +43,10 @@ L'import et l'export des palettes en Protobuf, ainsi que l'export étendu des no
 
 ## Développement
 
-- [Démarrage local](./start_guide.md)
+- [Démarrage local](./guides/start_guide.md)
+- [Ajouter une carte au coffre](./guides/map-creation.md)
 - [Architecture](./architecture.md)
-- [Publication](./publish.md)
+- [Publication](./guides/publish.md)
 
 La configuration des pages et des métadonnées se trouve dans [pages.config.mjs](./pages.config.mjs), [static.config.mjs](./static.config.mjs) et [package.json](./package.json). Chaque générateur est autonome.
 

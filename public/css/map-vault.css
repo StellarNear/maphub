@@ -1,0 +1,35 @@
+.vault-main { width: 1500px; padding-bottom: 24px; }
+.vault-main h1 { font-family: "IM Fell Great Primer", serif; }
+.vault-main h2 { font-size: 19px; margin: 0 0 12px; }
+.vault-layout { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 20px; align-items: start; }
+.vault-catalog { padding: 16px; max-height: 85vh; overflow-y: auto; }
+.vault-tree ul { list-style: none; margin: 0; padding: 0; }
+.vault-tree ul ul { margin-left: 12px; padding-left: 12px; border-left: 1px solid rgba(168,179,199,.45); }
+.vault-tree li { margin: 3px 0; }
+.vault-tree a, .vault-tree summary { padding: 7px 8px; border-radius: 6px; overflow-wrap: anywhere; }
+.vault-tree a { display: block; }
+.vault-region-label { cursor: pointer; font-weight: bold; color: #e6d3a6; }
+.vault-current-region { background: rgba(230,211,166,.12); }
+.vault-map-link { font-size: 14px; color: #c5d0df; }
+.vault-map-link::before { content: "▧ "; color: #8EF0C9; }
+.vault-map-link[aria-current="page"] { color: #8EF0C9; background: rgba(142,240,201,.12); }
+.vault-map { min-width: 0; }
+.vault-kind, .vault-source { color: #A8B3C7; font-size: 14px; overflow-wrap: anywhere; }
+.vault-viewer-frame { overflow: hidden; background: #0b0f14; }
+.vault-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; padding: 8px; }
+.vault-toolbar .btn { font-family: inherit; min-height: 44px; cursor: pointer; }
+.vault-toolbar output { min-width: 4em; text-align: center; }
+#mapViewport { height: min(65vh, 760px); min-height: 300px; width: 100%; background: #080b10; touch-action: none; }
+#mapViewport:focus-visible, .vault-main a:focus-visible, .vault-main button:focus-visible, .vault-tree summary:focus-visible { outline: 2px solid #8EF0C9; outline-offset: -2px; }
+.vault-status { padding: 6px 12px; min-height: 36px; }
+.vault-status [role="alert"] { color: #ffb6b6; }
+.vault-viewer-frame:fullscreen, .vault-viewer-frame.vault-expanded { display: flex; flex-direction: column; width: 100%; height: 100%; border-radius: 0; }
+.vault-viewer-frame:fullscreen #mapViewport, .vault-viewer-frame.vault-expanded #mapViewport { flex: 1; height: auto; min-height: 0; }
+.vault-viewer-frame.vault-expanded { position: fixed; inset: 0; z-index: 1000; }
+body.vault-expanded-body { overflow: hidden; }
+[hidden] { display: none !important; }
+@media (max-width: 760px) {
+    .vault-layout { grid-template-columns: minmax(0, 1fr); }
+    .vault-catalog { max-height: 42vh; }
+    #mapViewport { height: 58vh; }
+}

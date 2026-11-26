@@ -94,6 +94,8 @@ self.addEventListener("fetch",(event)=>{
 
     const url = new URL(req.url);
     if(!isSameOrigin(url)) return;
+    // Large map pyramids stay in the HTTP cache, not the unbounded offline caches.
+    if(url.pathname.startsWith("{{BASE_PATH}}maps_converted/")) return;
 
     if(isNavigation(req)){
         event.respondWith((async()=>{

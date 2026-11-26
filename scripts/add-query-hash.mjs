@@ -48,6 +48,7 @@ function collectFiles(rootDir) {
             const fullPath = path.join(dir, entry.name);
 
             if (entry.isDirectory()) {
+                if (fullPath === path.join(rootDir, "maps_converted")) continue;
                 stack.push(fullPath);
                 continue;
             }

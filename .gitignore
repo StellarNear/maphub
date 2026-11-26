@@ -10,6 +10,10 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+.venv-maps
+__pycache__/
+/maps/*
+!/maps/README.md
 *.local
 
 src/js/struct

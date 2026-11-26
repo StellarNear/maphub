@@ -1,5 +1,29 @@
 {
   "__name": "Français",
+  "vault": {
+    "title": "Coffre des cartes connues",
+    "intro": "Explorez les cartes par région. Les noms propres sont conservés dans toutes les langues.",
+    "home": "Retour au hub",
+    "worldRegion": "Monde",
+    "regions": "Régions",
+    "zoomIn": "Zoom avant",
+    "zoomOut": "Zoom arrière",
+    "fit": "Ajuster",
+    "actualSize": "Taille réelle",
+    "fullscreen": "Agrandir",
+    "exitFullscreen": "Réduire",
+    "help": "Molette ou pincement : zoom ; glisser : déplacement. Au clavier dans la carte : + / −, flèches et 0 pour ajuster.",
+    "raster": "Image matricielle — WebP qualité 90",
+    "rasterNote": "Aucune donnée géographique éditable n’a été reconstituée. Le zoom ne crée pas de nouveaux détails.",
+    "loading": "Chargement de la carte…",
+    "ready": "Carte ouverte.",
+    "error": "La carte n’a pas pu être chargée. Vérifiez la connexion puis réessayez.",
+    "invalidLink": "Ce lien de carte, de région ou de page est inconnu.",
+    "retry": "Réessayer",
+    "source": "Source",
+    "online": "Cartes chargées à la demande : leur disponibilité hors connexion n’est pas garantie.",
+    "world": "Carte du monde"
+  },
   "meta": {
     "title": "{{NAME_FULL}}",
     "description": "Générateurs de cartes fantastiques et outils d'édition utilisables hors connexion."
@@ -24,7 +48,7 @@
     "compatTitle": "À propos de la version :",
     "compatText": "{{NAME_SHORT}} {{VERSION}}",
     "legalHtml": "<p><b>Informations légales.</b> Cette page est fournie « telle quelle », sans aucune garantie. Vous l’utilisez à vos propres risques.</p><p><b>Outils tiers.</b> Les générateurs peuvent être basés sur des projets tiers ou s’en inspirer. Veuillez respecter leurs licences et leurs exigences d’attribution.</p><p><b>Confidentialité.</b> Cette page ne collecte volontairement aucune donnée personnelle. La langue choisie est stockée localement dans le navigateur (localStorage) afin de mémoriser votre choix.</p>",
-    "footerAbout": "Projet initié par <a href='https://watabou.github.io/' target='_blank' rel='noopener'>Watabou</a>, enrichi par <a href='https://github.com/voluminor/maphub' target='_blank' rel='noopener'>voluminor (sunsung)</a>. Súriël est désormais maintenue et développée par <a href='https://github.com/StellarNear' target='_blank' rel='noopener'>StellarNear</a>.",
+    "footerAbout": "Projet initié par Watabou, enrichi par voluminor (sunsung). Súriël est désormais maintenue et développée par <a href='https://github.com/StellarNear' target='_blank' rel='noopener'>StellarNear</a>.",
     "copyrightOwner": "{{LICENSE}}",
     "pwaInstall": "Installer",
     "pwaInstallUnavailable": "L’installation n’est pas disponible.",
@@ -34,6 +58,19 @@
     "pwaInstallIOSToast": "iPhone/iPad : ouvrez « Partager » et choisissez « Sur l’écran d’accueil »"
   },
   "generators": {
+    "maps": {
+      "title": "Coffre des cartes connues",
+      "tag": "atlas",
+      "short": "Parcourez les régions et explorez les cartes connues avec un zoom fluide, sur ordinateur et mobile.",
+      "desc": ["Un coffre de cartes existantes, classées par région. Les images sont compressées en WebP et ne deviennent pas des données géographiques éditables."],
+      "features": ["Régions et sous-régions, avec liens directs vers les cartes.", "Zoom à la molette ou par pincement et déplacement au toucher.", "Les grandes cartes sont chargées par tuiles à la demande."],
+      "hotkeysTitle": "Dans la visionneuse",
+      "hotkeys": [
+        { "k": "+ / -", "d": "zoomer / dézoomer" },
+        { "k": "0", "d": "ajuster la carte" },
+        { "k": "Flèches", "d": "déplacer la carte" }
+      ]
+    },
     "cave": {
       "title": "Générateur de grottes / clairières",
       "tag": "carte de lieu",

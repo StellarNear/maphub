@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="{{STYLE_COLOR_THEME}}" />
+    <title>Coffre des cartes connues - Súriël</title>
+    <link rel="icon" href="{{BASE_PATH}}img/ico_simply.png" />
+    <link rel="stylesheet" href="{{BASE_PATH}}css/styles.css" />
+    <link rel="stylesheet" href="{{BASE_PATH}}css/map-vault.css" />
+</head>
+<body>
+<a class="skip" href="#main" data-ui="skip">Aller au contenu</a>
+<header>
+    <div class="container head-inner">
+        <a class="brand" href="{{BASE_PATH}}">
+            <span class="logo" aria-hidden="true"></span>
+            <span class="brand-title">{{NAME_FULL}}</span>
+        </a>
+        <nav aria-label="Navigation">
+            <a class="btn" href="{{BASE_PATH}}" data-vault="home">Retour au hub</a>
+            <span class="lang">
+                <label for="vaultLanguage" data-ui="langLabel">Langue :</label>
+                <select id="vaultLanguage"><option value="fr">Français</option><option value="en">English</option></select>
+            </span>
+        </nav>
+    </div>
+</header>
+<main id="main" class="container vault-main" tabindex="-1">
+    <h1 data-vault="title">Coffre des cartes connues</h1>
+    <p data-vault="intro"></p>
+    <div class="vault-layout">
+        <aside class="panel vault-catalog">
+            <h2 data-vault="regions">Régions</h2>
+            <nav id="regionTree" class="vault-tree"></nav>
+        </aside>
+        <section class="vault-map">
+            <h2 id="mapTitle"></h2>
+            <p id="mapKind" class="vault-kind"></p>
+            <div id="viewerFrame" class="panel vault-viewer-frame">
+                <div id="viewerToolbar" class="vault-toolbar">
+                    <button class="btn" type="button" id="zoomIn" data-vault="zoomIn"></button>
+                    <button class="btn" type="button" id="zoomOut" data-vault="zoomOut"></button>
+                    <button class="btn" type="button" id="fitMap" data-vault="fit"></button>
+                    <button class="btn" type="button" id="actualSize" data-vault="actualSize"></button>
+                    <button class="btn" type="button" id="expandMap" data-vault="fullscreen" aria-pressed="false"></button>
+                    <output id="zoomLevel" aria-live="off"></output>
+                </div>
+                <div id="mapViewport" tabindex="0" role="region" aria-describedby="viewerHelp"></div>
+                <div class="vault-status">
+                    <span id="mapStatus" role="status" aria-live="polite">Chargement… / Loading…</span>
+                    <button class="btn" id="retryMap" type="button" data-vault="retry" hidden></button>
+                </div>
+            </div>
+            <p id="viewerHelp" data-vault="help"></p>
+            <p id="mapNote"></p>
+            <p class="vault-source"><span data-vault="source"></span> : <span id="sourceName"></span></p>
+        </section>
+    </div>
+    <p class="muted" data-vault="online"></p>
+    <noscript>JavaScript est nécessaire pour parcourir les cartes. / JavaScript is required to browse maps.</noscript>
+</main>
+<script src="{{BASE_PATH}}vendor/openseadragon/openseadragon.min.js"></script>
+<script src="{{BASE_PATH}}js/map-vault.js"></script>
+<script src="{{BASE_PATH}}js/pwa-register.js"></script>
+</body>
+</html>

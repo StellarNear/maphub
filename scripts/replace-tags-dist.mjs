@@ -56,6 +56,7 @@ async function listFileUrls(dirPath) {
             const fullAbs = path.join(currentDir, entry.name);
 
             if (entry.isDirectory()) {
+                if (fullAbs === path.join(absRoot, "maps_converted")) continue;
                 stack.push(fullAbs);
                 continue;
             }

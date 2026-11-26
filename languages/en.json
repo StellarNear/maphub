@@ -1,5 +1,29 @@
 {
   "__name": "English",
+  "vault": {
+    "title": "Vault of known maps",
+    "intro": "Explore maps by region. Proper names are kept in every language.",
+    "home": "Back to the hub",
+    "worldRegion": "World",
+    "regions": "Regions",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "fit": "Fit map",
+    "actualSize": "Actual size",
+    "fullscreen": "Expand",
+    "exitFullscreen": "Collapse",
+    "help": "Wheel or pinch to zoom; drag to pan. With the map focused: + / −, arrows and 0 to fit.",
+    "raster": "Raster image — WebP quality 90",
+    "rasterNote": "No editable geographical data has been reconstructed. Zooming does not create new detail.",
+    "loading": "Loading map…",
+    "ready": "Map opened.",
+    "error": "The map could not be loaded. Check your connection and try again.",
+    "invalidLink": "This map, region or page link is unknown.",
+    "retry": "Retry",
+    "source": "Source",
+    "online": "Maps load on demand: offline availability is not guaranteed.",
+    "world": "World map"
+  },
   "meta": {
     "title": "{{NAME_FULL}}",
     "description": "{{DESCRIPTION}}"
@@ -24,7 +48,7 @@
     "compatTitle": "Build:",
     "compatText": "{{NAME_SHORT}} {{VERSION}}",
     "legalHtml": "<p><b>Legal information.</b> This page is provided “as is”, without any warranties. You use it at your own risk.</p><p><b>Third-party tools.</b> Generators may be based on or inspired by third-party projects. Please comply with their licenses and attribution requirements.</p><p><b>Privacy.</b> The page intentionally does not collect personal data. Your selected language is stored locally in the browser (localStorage) to remember your choice.</p>",
-    "footerAbout": "Started by <a href='https://watabou.github.io/' target='_blank' rel='noopener'>Watabou</a>, expanded by <a href='https://github.com/voluminor/maphub' target='_blank' rel='noopener'>voluminor (sunsung)</a>, and now maintained and developed by <a href='https://github.com/StellarNear' target='_blank' rel='noopener'>StellarNear</a>.",
+    "footerAbout": "Started by Watabou, expanded by voluminor (sunsung), and now maintained and developed by <a href='https://github.com/StellarNear' target='_blank' rel='noopener'>StellarNear</a>.",
     "copyrightOwner": "{{LICENSE}}",
     "pwaInstall": "Install",
     "pwaInstallUnavailable": "Installation unavailable.",
@@ -34,6 +58,19 @@
     "pwaInstallIOSToast": "iPhone/iPad: open “Share” and choose “Add to Home Screen”"
   },
   "generators": {
+    "maps": {
+      "title": "Vault of known maps",
+      "tag": "atlas",
+      "short": "Browse the regions and explore known maps with smooth zooming on desktop and mobile.",
+      "desc": ["A vault of existing maps organized by region. Images are compressed as WebP and do not become editable geographical data."],
+      "features": ["Regions and subregions, with direct links to maps.", "Wheel or pinch zoom and touch panning.", "Large maps load as tiles on demand."],
+      "hotkeysTitle": "Inside the viewer",
+      "hotkeys": [
+        { "k": "+ / -", "d": "zoom in / out" },
+        { "k": "0", "d": "fit map" },
+        { "k": "Arrows", "d": "pan map" }
+      ]
+    },
     "cave": {
       "title": "Cave/Glade Generator",
       "tag": "location map",

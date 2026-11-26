@@ -22,15 +22,17 @@
     "build:gen:index-pages": "node scripts/generate-pages-index.mjs",
     "build:gen:icons": "node scripts/generate-icons.mjs",
     "build:gen:languages": "node scripts/generate-languages-bundle.mjs",
+    "build:gen:map-viewer": "node scripts/prepare-map-viewer.mjs",
     "build:gen:openapi": "node scripts/merge-openapi.mjs",
     "build:rewrite:tags": "node scripts/replace-tags-dist.mjs",
     "build:rewrite:minify": "node scripts/minify-static-js.mjs",
     "build:rewrite:hash-url": "node scripts/add-query-hash.mjs",
     "build:gen:sitemap": "node scripts/generate-sitemap.mjs",
-    "build:list": "run-s build:gen:index-pages build:gen:icons build:gen:languages build:gen:openapi build:rewrite:tags build:rewrite:minify build:rewrite:hash-url build:gen:sitemap",
+    "build:list": "run-s build:gen:index-pages build:gen:icons build:gen:languages build:gen:map-viewer build:gen:openapi build:rewrite:tags build:rewrite:minify build:rewrite:hash-url build:gen:sitemap",
     "build": "vite build && npm run build:list",
     "preview": "vite preview",
     "test": "vitest run",
+    "maps:convert": "node scripts/convert-maps.mjs",
     "test:watch": "vitest"
   },
   "devDependencies": {
@@ -50,6 +52,7 @@
     "eslint-plugin-unused-imports": "^4.4.1",
     "file-saver": "^2.0.5",
     "howler": "^2.2.4",
+    "openseadragon": "6.1.1",
     "pako": "^2.1.0",
     "protobufjs": "^7.5.4",
     "vite-plugin-static-copy": "^3.2.0"

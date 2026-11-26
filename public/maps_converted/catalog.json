@@ -1,0 +1,806 @@
+{
+  "schema": 1,
+  "maps": [
+    {
+      "id": "monde",
+      "name": "Carte du monde",
+      "regions": [],
+      "source": "[MAP]Carte du monde.jpg",
+      "pages": [
+        {
+          "width": 12620,
+          "height": 7294,
+          "type": "dzi",
+          "bytes": 16899241,
+          "files": 530,
+          "page": 1,
+          "url": "monde/9eeef6308c37b019/tiles.dzi",
+          "thumbnail": "monde/9eeef6308c37b019/thumbnail.webp"
+        }
+      ],
+      "conversion": {
+        "sha256": "41f50b3e78bd75d373e35689599049491f70c5f8a16fbef1ca18230396fdb870",
+        "sourceBytes": 17191318,
+        "settings": {
+          "revision": 2,
+          "tileSize": 512,
+          "overlap": 1,
+          "format": "webp",
+          "quality": 90,
+          "maxImagePixels": 16000000
+        },
+        "sharp": {
+          "aom": "3.13.1",
+          "archive": "3.8.2",
+          "cairo": "1.18.4",
+          "cgif": "0.5.0",
+          "exif": "0.6.25",
+          "expat": "2.7.3",
+          "ffi": "3.5.2",
+          "fontconfig": "2.17.1",
+          "freetype": "2.14.1",
+          "fribidi": "1.0.16",
+          "glib": "2.86.1",
+          "harfbuzz": "12.1.0",
+          "heif": "1.20.2",
+          "highway": "1.3.0",
+          "imagequant": "2.4.1",
+          "lcms": "2.17",
+          "mozjpeg": "0826579",
+          "pango": "1.57.0",
+          "pixman": "0.46.4",
+          "png": "1.6.50",
+          "proxy-libintl": "0.5",
+          "rsvg": "2.61.2",
+          "spng": "0.7.4",
+          "tiff": "4.7.1",
+          "vips": "8.17.3",
+          "webp": "1.6.0",
+          "xml2": "2.15.1",
+          "zlib-ng": "2.2.5",
+          "sharp": "0.34.5"
+        }
+      }
+    },
+    {
+      "id": "royaume-gunud/abilun",
+      "name": "Abilün",
+      "regions": [
+        {
+          "id": "royaume-gunud",
+          "name": "Royaume Günüd"
+        }
+      ],
+      "source": "RoyaumeGünüd/abilun.jpg",
+      "pages": [
+        {
+          "width": 2000,
+          "height": 2000,
+          "type": "image",
+          "bytes": 1133698,
+          "files": 2,
+          "page": 1,
+          "url": "royaume-gunud/abilun/85268b3d475e5dd5/image.webp",
+          "thumbnail": "royaume-gunud/abilun/85268b3d475e5dd5/thumbnail.webp"
+        }
+      ],
+      "conversion": {
+        "sha256": "7a88abf2acbde9acba4b92f00534d0c9aa71872407ce0283a58ae91fd3597c6f",
+        "sourceBytes": 1686074,
+        "settings": {
+          "revision": 2,
+          "tileSize": 512,
+          "overlap": 1,
+          "format": "webp",
+          "quality": 90,
+          "maxImagePixels": 16000000
+        },
+        "sharp": {
+          "aom": "3.13.1",
+          "archive": "3.8.2",
+          "cairo": "1.18.4",
+          "cgif": "0.5.0",
+          "exif": "0.6.25",
+          "expat": "2.7.3",
+          "ffi": "3.5.2",
+          "fontconfig": "2.17.1",
+          "freetype": "2.14.1",
+          "fribidi": "1.0.16",
+          "glib": "2.86.1",
+          "harfbuzz": "12.1.0",
+          "heif": "1.20.2",
+          "highway": "1.3.0",
+          "imagequant": "2.4.1",
+          "lcms": "2.17",
+          "mozjpeg": "0826579",
+          "pango": "1.57.0",
+          "pixman": "0.46.4",
+          "png": "1.6.50",
+          "proxy-libintl": "0.5",
+          "rsvg": "2.61.2",
+          "spng": "0.7.4",
+          "tiff": "4.7.1",
+          "vips": "8.17.3",
+          "webp": "1.6.0",
+          "xml2": "2.15.1",
+          "zlib-ng": "2.2.5",
+          "sharp": "0.34.5"
+        }
+      }
+    },
+    {
+      "id": "royaume-gunud/olik",
+      "name": "Olik (capitale)",
+      "regions": [
+        {
+          "id": "royaume-gunud",
+          "name": "Royaume Günüd"
+        }
+      ],
+      "source": "RoyaumeGünüd/Dal.jpg",
+      "pages": [
+        {
+          "width": 2000,
+          "height": 2000,
+          "type": "image",
+          "bytes": 932916,
+          "files": 2,
+          "page": 1,
+          "url": "royaume-gunud/olik/a8762f009384abaf/image.webp",
+          "thumbnail": "royaume-gunud/olik/a8762f009384abaf/thumbnail.webp"
+        }
+      ],
+      "conversion": {
+        "sha256": "147eb21ec56dc9dbe45f47eeeff054fbb341d1b74c7cbba248dd46828401c38e",
+        "sourceBytes": 1294008,
+        "settings": {
+          "revision": 2,
+          "tileSize": 512,
+          "overlap": 1,
+          "format": "webp",
+          "quality": 90,
+          "maxImagePixels": 16000000
+        },
+        "sharp": {
+          "aom": "3.13.1",
+          "archive": "3.8.2",
+          "cairo": "1.18.4",
+          "cgif": "0.5.0",
+          "exif": "0.6.25",
+          "expat": "2.7.3",
+          "ffi": "3.5.2",
+          "fontconfig": "2.17.1",
+          "freetype": "2.14.1",
+          "fribidi": "1.0.16",
+          "glib": "2.86.1",
+          "harfbuzz": "12.1.0",
+          "heif": "1.20.2",
+          "highway": "1.3.0",
+          "imagequant": "2.4.1",
+          "lcms": "2.17",
+          "mozjpeg": "0826579",
+          "pango": "1.57.0",
+          "pixman": "0.46.4",
+          "png": "1.6.50",
+          "proxy-libintl": "0.5",
+          "rsvg": "2.61.2",
+          "spng": "0.7.4",
+          "tiff": "4.7.1",
+          "vips": "8.17.3",
+          "webp": "1.6.0",
+          "xml2": "2.15.1",
+          "zlib-ng": "2.2.5",
+          "sharp": "0.34.5"
+        }
+      }
+    },
+    {
+      "id": "royaume-gunud/dum",
+      "name": "Dûm",
+      "regions": [
+        {
+          "id": "royaume-gunud",
+          "name": "Royaume Günüd"
+        }
+      ],
+      "source": "RoyaumeGünüd/Dûm.jpg",
+      "pages": [
+        {
+          "width": 2000,
+          "height": 2000,
+          "type": "image",
+          "bytes": 921794,
+          "files": 2,
+          "page": 1,
+          "url": "royaume-gunud/dum/29aa619ae1f2f7eb/image.webp",
+          "thumbnail": "royaume-gunud/dum/29aa619ae1f2f7eb/thumbnail.webp"
+        }
+      ],
+      "conversion": {
+        "sha256": "f17dd3fa75d426ef52618d1a5dd20a2a9b1bf6114d0a5a7d65d3c667735fd267",
+        "sourceBytes": 1032238,
+        "settings": {
+          "revision": 2,
+          "tileSize": 512,
+          "overlap": 1,
+          "format": "webp",
+          "quality": 90,
+          "maxImagePixels": 16000000
+        },
+        "sharp": {
+          "aom": "3.13.1",
+          "archive": "3.8.2",
+          "cairo": "1.18.4",
+          "cgif": "0.5.0",
+          "exif": "0.6.25",
+          "expat": "2.7.3",
+          "ffi": "3.5.2",
+          "fontconfig": "2.17.1",
+          "freetype": "2.14.1",
+          "fribidi": "1.0.16",
+          "glib": "2.86.1",
+          "harfbuzz": "12.1.0",
+          "heif": "1.20.2",
+          "highway": "1.3.0",
+          "imagequant": "2.4.1",
+          "lcms": "2.17",
+          "mozjpeg": "0826579",
+          "pango": "1.57.0",
+          "pixman": "0.46.4",
+          "png": "1.6.50",
+          "proxy-libintl": "0.5",
+          "rsvg": "2.61.2",
+          "spng": "0.7.4",
+          "tiff": "4.7.1",
+          "vips": "8.17.3",
+          "webp": "1.6.0",
+          "xml2": "2.15.1",
+          "zlib-ng": "2.2.5",
+          "sharp": "0.34.5"
+        }
+      }
+    },
+    {
+      "id": "royaume-gunud/felek",
+      "name": "Felek",
+      "regions": [
+        {
+          "id": "royaume-gunud",
+          "name": "Royaume Günüd"
+        }
+      ],
+      "source": "RoyaumeGünüd/Felek.jpg",
+      "pages": [
+        {
+          "width": 2000,
+          "height": 2000,
+          "type": "image",
+          "bytes": 781408,
+          "files": 2,
+          "page": 1,
+          "url": "royaume-gunud/felek/ac681b2248cf5459/image.webp",
+          "thumbnail": "royaume-gunud/felek/ac681b2248cf5459/thumbnail.webp"
+        }
+      ],
+      "conversion": {
+        "sha256": "7992c4e98b9dd8eee04843cbeaa7e79613ef8593c72c681384317662f11406bf",
+        "sourceBytes": 615481,
+        "settings": {
+          "revision": 2,
+          "tileSize": 512,
+          "overlap": 1,
+          "format": "webp",
+          "quality": 90,
+          "maxImagePixels": 16000000
+        },
+        "sharp": {
+          "aom": "3.13.1",
+          "archive": "3.8.2",
+          "cairo": "1.18.4",
+          "cgif": "0.5.0",
+          "exif": "0.6.25",
+          "expat": "2.7.3",
+          "ffi": "3.5.2",
+          "fontconfig": "2.17.1",
+          "freetype": "2.14.1",
+          "fribidi": "1.0.16",
+          "glib": "2.86.1",
+          "harfbuzz": "12.1.0",
+          "heif": "1.20.2",
+          "highway": "1.3.0",
+          "imagequant": "2.4.1",
+          "lcms": "2.17",
+          "mozjpeg": "0826579",
+          "pango": "1.57.0",
+          "pixman": "0.46.4",
+          "png": "1.6.50",
+          "proxy-libintl": "0.5",
+          "rsvg": "2.61.2",
+          "spng": "0.7.4",
+          "tiff": "4.7.1",
+          "vips": "8.17.3",
+          "webp": "1.6.0",
+          "xml2": "2.15.1",
+          "zlib-ng": "2.2.5",
+          "sharp": "0.34.5"
+        }
+      }
+    },
+    {
+      "id": "royaume-maira/yalumea",
+      "name": "Yalüméa",
+      "regions": [
+        {
+          "id": "royaume-maira",
+          "name": "Royaume Maïra"
+        }
+      ],
+      "source": "RoyaumeMaïra/[MAP]Carte Yalüméa.jpg",
+      "pages": [
+        {
+          "width": 5333,
+          "height": 3000,
+          "type": "image",
+          "bytes": 3281916,
+          "files": 2,
+          "page": 1,
+          "url": "royaume-maira/yalumea/bfcb5446c8e20da0/image.webp",
+          "thumbnail": "royaume-maira/yalumea/bfcb5446c8e20da0/thumbnail.webp"
+        }
+      ],
+      "conversion": {
+        "sha256": "2da1fc83e71ea5816146b790a2aac25f51315d3fbb196c2174f51416e3f9174c",
+        "sourceBytes": 4910727,
+        "settings": {
+          "revision": 2,
+          "tileSize": 512,
+          "overlap": 1,
+          "format": "webp",
+          "quality": 90,
+          "maxImagePixels": 16000000
+        },
+        "sharp": {
+          "aom": "3.13.1",
+          "archive": "3.8.2",
+          "cairo": "1.18.4",
+          "cgif": "0.5.0",
+          "exif": "0.6.25",
+          "expat": "2.7.3",
+          "ffi": "3.5.2",
+          "fontconfig": "2.17.1",
+          "freetype": "2.14.1",
+          "fribidi": "1.0.16",
+          "glib": "2.86.1",
+          "harfbuzz": "12.1.0",
+          "heif": "1.20.2",
+          "highway": "1.3.0",
+          "imagequant": "2.4.1",
+          "lcms": "2.17",
+          "mozjpeg": "0826579",
+          "pango": "1.57.0",
+          "pixman": "0.46.4",
+          "png": "1.6.50",
+          "proxy-libintl": "0.5",
+          "rsvg": "2.61.2",
+          "spng": "0.7.4",
+          "tiff": "4.7.1",
+          "vips": "8.17.3",
+          "webp": "1.6.0",
+          "xml2": "2.15.1",
+          "zlib-ng": "2.2.5",
+          "sharp": "0.34.5"
+        }
+      }
+    },
+    {
+      "id": "royaume-mersa/mersa-royaume",
+      "name": "Mersa (Royaume)",
+      "regions": [
+        {
+          "id": "royaume-mersa",
+          "name": "Royaume Mersa"
+        }
+      ],
+      "source": "RoyaumeMersa/[MAP]Carte Mersa (Royaume).jpg",
+      "pages": [
+        {
+          "width": 2517,
+          "height": 1494,
+          "type": "image",
+          "bytes": 1021264,
+          "files": 2,
+          "page": 1,
+          "url": "royaume-mersa/mersa-royaume/987677536c0d9be9/image.webp",
+          "thumbnail": "royaume-mersa/mersa-royaume/987677536c0d9be9/thumbnail.webp"
+        }
+      ],
+      "conversion": {
+        "sha256": "a6d1a0c50949f011cd5e700d2364902a82b5db863e1d33daa3d73926fbde91bc",
+        "sourceBytes": 1457504,
+        "settings": {
+          "revision": 2,
+          "tileSize": 512,
+          "overlap": 1,
+          "format": "webp",
+          "quality": 90,
+          "maxImagePixels": 16000000
+        },
+        "sharp": {
+          "aom": "3.13.1",
+          "archive": "3.8.2",
+          "cairo": "1.18.4",
+          "cgif": "0.5.0",
+          "exif": "0.6.25",
+          "expat": "2.7.3",
+          "ffi": "3.5.2",
+          "fontconfig": "2.17.1",
+          "freetype": "2.14.1",
+          "fribidi": "1.0.16",
+          "glib": "2.86.1",
+          "harfbuzz": "12.1.0",
+          "heif": "1.20.2",
+          "highway": "1.3.0",
+          "imagequant": "2.4.1",
+          "lcms": "2.17",
+          "mozjpeg": "0826579",
+          "pango": "1.57.0",
+          "pixman": "0.46.4",
+          "png": "1.6.50",
+          "proxy-libintl": "0.5",
+          "rsvg": "2.61.2",
+          "spng": "0.7.4",
+          "tiff": "4.7.1",
+          "vips": "8.17.3",
+          "webp": "1.6.0",
+          "xml2": "2.15.1",
+          "zlib-ng": "2.2.5",
+          "sharp": "0.34.5"
+        }
+      }
+    },
+    {
+      "id": "royaume-mersa/mersa-ville-basse",
+      "name": "Mersa (Ville Basse)",
+      "regions": [
+        {
+          "id": "royaume-mersa",
+          "name": "Royaume Mersa"
+        }
+      ],
+      "source": "RoyaumeMersa/[MAP]Carte Mersa (Ville Basse).jpg",
+      "pages": [
+        {
+          "width": 2000,
+          "height": 2000,
+          "type": "image",
+          "bytes": 1417658,
+          "files": 2,
+          "page": 1,
+          "url": "royaume-mersa/mersa-ville-basse/e7a84d2f47c4b246/image.webp",
+          "thumbnail": "royaume-mersa/mersa-ville-basse/e7a84d2f47c4b246/thumbnail.webp"
+        }
+      ],
+      "conversion": {
+        "sha256": "4c18afacf2392745082e6a65f4c48edebe722bc03c3948d7ccd4358856b49a0f",
+        "sourceBytes": 2516990,
+        "settings": {
+          "revision": 2,
+          "tileSize": 512,
+          "overlap": 1,
+          "format": "webp",
+          "quality": 90,
+          "maxImagePixels": 16000000
+        },
+        "sharp": {
+          "aom": "3.13.1",
+          "archive": "3.8.2",
+          "cairo": "1.18.4",
+          "cgif": "0.5.0",
+          "exif": "0.6.25",
+          "expat": "2.7.3",
+          "ffi": "3.5.2",
+          "fontconfig": "2.17.1",
+          "freetype": "2.14.1",
+          "fribidi": "1.0.16",
+          "glib": "2.86.1",
+          "harfbuzz": "12.1.0",
+          "heif": "1.20.2",
+          "highway": "1.3.0",
+          "imagequant": "2.4.1",
+          "lcms": "2.17",
+          "mozjpeg": "0826579",
+          "pango": "1.57.0",
+          "pixman": "0.46.4",
+          "png": "1.6.50",
+          "proxy-libintl": "0.5",
+          "rsvg": "2.61.2",
+          "spng": "0.7.4",
+          "tiff": "4.7.1",
+          "vips": "8.17.3",
+          "webp": "1.6.0",
+          "xml2": "2.15.1",
+          "zlib-ng": "2.2.5",
+          "sharp": "0.34.5"
+        }
+      }
+    },
+    {
+      "id": "royaume-mersa/mersa-ville-haute",
+      "name": "Mersa (Ville Haute)",
+      "regions": [
+        {
+          "id": "royaume-mersa",
+          "name": "Royaume Mersa"
+        }
+      ],
+      "source": "RoyaumeMersa/[MAP]Carte Mersa (Ville Haute).jpg",
+      "pages": [
+        {
+          "width": 2000,
+          "height": 2000,
+          "type": "image",
+          "bytes": 777696,
+          "files": 2,
+          "page": 1,
+          "url": "royaume-mersa/mersa-ville-haute/2771a5e7cdfcf6c8/image.webp",
+          "thumbnail": "royaume-mersa/mersa-ville-haute/2771a5e7cdfcf6c8/thumbnail.webp"
+        }
+      ],
+      "conversion": {
+        "sha256": "dcc7e9aaae3194f3a60695b8160880cc38ab82f3c93158dbd7baf7058d0fc21d",
+        "sourceBytes": 1609952,
+        "settings": {
+          "revision": 2,
+          "tileSize": 512,
+          "overlap": 1,
+          "format": "webp",
+          "quality": 90,
+          "maxImagePixels": 16000000
+        },
+        "sharp": {
+          "aom": "3.13.1",
+          "archive": "3.8.2",
+          "cairo": "1.18.4",
+          "cgif": "0.5.0",
+          "exif": "0.6.25",
+          "expat": "2.7.3",
+          "ffi": "3.5.2",
+          "fontconfig": "2.17.1",
+          "freetype": "2.14.1",
+          "fribidi": "1.0.16",
+          "glib": "2.86.1",
+          "harfbuzz": "12.1.0",
+          "heif": "1.20.2",
+          "highway": "1.3.0",
+          "imagequant": "2.4.1",
+          "lcms": "2.17",
+          "mozjpeg": "0826579",
+          "pango": "1.57.0",
+          "pixman": "0.46.4",
+          "png": "1.6.50",
+          "proxy-libintl": "0.5",
+          "rsvg": "2.61.2",
+          "spng": "0.7.4",
+          "tiff": "4.7.1",
+          "vips": "8.17.3",
+          "webp": "1.6.0",
+          "xml2": "2.15.1",
+          "zlib-ng": "2.2.5",
+          "sharp": "0.34.5"
+        }
+      }
+    },
+    {
+      "id": "royaume-mersa/iles-brisees/lumerive-bas-port",
+      "name": "Lumerive — Bas-Port",
+      "regions": [
+        {
+          "id": "royaume-mersa",
+          "name": "Royaume Mersa"
+        },
+        {
+          "id": "iles-brisees",
+          "name": "Îles Brisées"
+        }
+      ],
+      "source": "RoyaumeMersa/Iles Brisées/LumeriveBas-Port.jpg",
+      "group": "Lumerive",
+      "pages": [
+        {
+          "width": 2970,
+          "height": 2101,
+          "type": "image",
+          "bytes": 2042036,
+          "files": 2,
+          "page": 1,
+          "url": "royaume-mersa/iles-brisees/lumerive-bas-port/305dfaaa3521b28f/image.webp",
+          "thumbnail": "royaume-mersa/iles-brisees/lumerive-bas-port/305dfaaa3521b28f/thumbnail.webp"
+        }
+      ],
+      "conversion": {
+        "sha256": "0651a1f8dd464ecf2aa7dec93e96bfc5ddda767cc04c8c66089c59b6cd286d44",
+        "sourceBytes": 2794734,
+        "settings": {
+          "revision": 2,
+          "tileSize": 512,
+          "overlap": 1,
+          "format": "webp",
+          "quality": 90,
+          "maxImagePixels": 16000000
+        },
+        "sharp": {
+          "aom": "3.13.1",
+          "archive": "3.8.2",
+          "cairo": "1.18.4",
+          "cgif": "0.5.0",
+          "exif": "0.6.25",
+          "expat": "2.7.3",
+          "ffi": "3.5.2",
+          "fontconfig": "2.17.1",
+          "freetype": "2.14.1",
+          "fribidi": "1.0.16",
+          "glib": "2.86.1",
+          "harfbuzz": "12.1.0",
+          "heif": "1.20.2",
+          "highway": "1.3.0",
+          "imagequant": "2.4.1",
+          "lcms": "2.17",
+          "mozjpeg": "0826579",
+          "pango": "1.57.0",
+          "pixman": "0.46.4",
+          "png": "1.6.50",
+          "proxy-libintl": "0.5",
+          "rsvg": "2.61.2",
+          "spng": "0.7.4",
+          "tiff": "4.7.1",
+          "vips": "8.17.3",
+          "webp": "1.6.0",
+          "xml2": "2.15.1",
+          "zlib-ng": "2.2.5",
+          "sharp": "0.34.5"
+        }
+      }
+    },
+    {
+      "id": "royaume-mersa/iles-brisees/lumerive",
+      "name": "Lumerive",
+      "regions": [
+        {
+          "id": "royaume-mersa",
+          "name": "Royaume Mersa"
+        },
+        {
+          "id": "iles-brisees",
+          "name": "Îles Brisées"
+        }
+      ],
+      "source": "RoyaumeMersa/Iles Brisées/[MAP]Carte Lumerive.jpg",
+      "group": "Lumerive",
+      "pages": [
+        {
+          "width": 2048,
+          "height": 3072,
+          "type": "image",
+          "bytes": 1976722,
+          "files": 2,
+          "page": 1,
+          "url": "royaume-mersa/iles-brisees/lumerive/0be68f1da6a7a0fe/image.webp",
+          "thumbnail": "royaume-mersa/iles-brisees/lumerive/0be68f1da6a7a0fe/thumbnail.webp"
+        }
+      ],
+      "conversion": {
+        "sha256": "40d7017b2db7165b46765cccb1fd52673e40047fc28b0b1f07b1b7051e94eb0b",
+        "sourceBytes": 2771915,
+        "settings": {
+          "revision": 2,
+          "tileSize": 512,
+          "overlap": 1,
+          "format": "webp",
+          "quality": 90,
+          "maxImagePixels": 16000000
+        },
+        "sharp": {
+          "aom": "3.13.1",
+          "archive": "3.8.2",
+          "cairo": "1.18.4",
+          "cgif": "0.5.0",
+          "exif": "0.6.25",
+          "expat": "2.7.3",
+          "ffi": "3.5.2",
+          "fontconfig": "2.17.1",
+          "freetype": "2.14.1",
+          "fribidi": "1.0.16",
+          "glib": "2.86.1",
+          "harfbuzz": "12.1.0",
+          "heif": "1.20.2",
+          "highway": "1.3.0",
+          "imagequant": "2.4.1",
+          "lcms": "2.17",
+          "mozjpeg": "0826579",
+          "pango": "1.57.0",
+          "pixman": "0.46.4",
+          "png": "1.6.50",
+          "proxy-libintl": "0.5",
+          "rsvg": "2.61.2",
+          "spng": "0.7.4",
+          "tiff": "4.7.1",
+          "vips": "8.17.3",
+          "webp": "1.6.0",
+          "xml2": "2.15.1",
+          "zlib-ng": "2.2.5",
+          "sharp": "0.34.5"
+        }
+      }
+    },
+    {
+      "id": "royaume-mersa/iles-brisees/iles-brisees",
+      "name": "Îles Brisées",
+      "regions": [
+        {
+          "id": "royaume-mersa",
+          "name": "Royaume Mersa"
+        },
+        {
+          "id": "iles-brisees",
+          "name": "Îles Brisées"
+        }
+      ],
+      "source": "RoyaumeMersa/Iles Brisées/[MAP]Iles brisées_fog.jpg",
+      "pages": [
+        {
+          "width": 1521,
+          "height": 1034,
+          "type": "image",
+          "bytes": 810958,
+          "files": 2,
+          "page": 1,
+          "url": "royaume-mersa/iles-brisees/iles-brisees/e4ca9dfd5fca6392/image.webp",
+          "thumbnail": "royaume-mersa/iles-brisees/iles-brisees/e4ca9dfd5fca6392/thumbnail.webp"
+        }
+      ],
+      "conversion": {
+        "sha256": "df3e987f5e3be4fc2e36bd59b61c18728f99e7c2d648aac911f47dcde245b3cf",
+        "sourceBytes": 905580,
+        "settings": {
+          "revision": 2,
+          "tileSize": 512,
+          "overlap": 1,
+          "format": "webp",
+          "quality": 90,
+          "maxImagePixels": 16000000
+        },
+        "sharp": {
+          "aom": "3.13.1",
+          "archive": "3.8.2",
+          "cairo": "1.18.4",
+          "cgif": "0.5.0",
+          "exif": "0.6.25",
+          "expat": "2.7.3",
+          "ffi": "3.5.2",
+          "fontconfig": "2.17.1",
+          "freetype": "2.14.1",
+          "fribidi": "1.0.16",
+          "glib": "2.86.1",
+          "harfbuzz": "12.1.0",
+          "heif": "1.20.2",
+          "highway": "1.3.0",
+          "imagequant": "2.4.1",
+          "lcms": "2.17",
+          "mozjpeg": "0826579",
+          "pango": "1.57.0",
+          "pixman": "0.46.4",
+          "png": "1.6.50",
+          "proxy-libintl": "0.5",
+          "rsvg": "2.61.2",
+          "spng": "0.7.4",
+          "tiff": "4.7.1",
+          "vips": "8.17.3",
+          "webp": "1.6.0",
+          "xml2": "2.15.1",
+          "zlib-ng": "2.2.5",
+          "sharp": "0.34.5"
+        }
+      }
+    }
+  ]
+}

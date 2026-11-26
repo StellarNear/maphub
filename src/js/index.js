@@ -4,7 +4,8 @@ const GENERATORS = [
     {id: "village", href: "{{ADR_VILLAGE}}", img: "{{BASE_PATH}}img/pico_village.png"},
     {id: "dwellings", href: "{{ADR_DWELLINGS}}", img: "{{BASE_PATH}}img/pico_dwellings.png"},
     {id: "cave", href: "{{ADR_CAVE}}", img: "{{BASE_PATH}}img/pico_cave.png"},
-    {id: "viewer", href: "{{ADR_VIEWER}}", img: "{{BASE_PATH}}img/pico_viewer.png"}
+    {id: "viewer", href: "{{ADR_VIEWER}}", img: "{{BASE_PATH}}img/pico_viewer.png"},
+    {id: "maps", href: "{{BASE_PATH}}coffre/", img: "{{BASE_PATH}}maps_converted/cover.webp"}
 ];
 
 function loadJSON(url, cb) {
