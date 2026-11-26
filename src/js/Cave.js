@@ -5215,7 +5215,7 @@ var $lime_init = function (A, r) {
                 if (null == Kb.grammar) {
                     var grammar = JSON.parse(Zb.getText(c));
                     Yd.rng = n.float;
-                    Kb.grammar = new Ei(globalThis.mapHubCaveGrammar ? globalThis.mapHubCaveGrammar(grammar, fb.showGlade) : grammar);
+                    Kb.grammar = new Ei(globalThis.surielCaveGrammar ? globalThis.surielCaveGrammar(grammar, fb.showGlade) : grammar);
                     Kb.grammar.defaultSelector = Qg;
                     Kb.grammar.addModifiers(db.get());
                     Kb.grammar.addExternal("proper", Kb.proper);
@@ -5715,7 +5715,7 @@ var $lime_init = function (A, r) {
                 activate: function () {
                     Kd.prototype.activate.call(this);
                     var scene = this;
-                    globalThis.mapHubOpenMenu = function () {
+                    globalThis.surielOpenMenu = function () {
                         Fa.hideMenu();
                         scene.showMenu(false, true);
                     };
@@ -5727,7 +5727,7 @@ var $lime_init = function (A, r) {
                 },
                 deactivate: function () {
                     Kd.prototype.deactivate.call(this);
-                    globalThis.mapHubOpenMenu = null;
+                    globalThis.surielOpenMenu = null;
                     this.removeEventListener("touchTap", l(this, this.onTap));
                     this.stage.removeEventListener("rightClick", l(this, this.onRightClick));
                     this.longPress.stop()
@@ -6615,7 +6615,7 @@ var $lime_init = function (A, r) {
                 nb.call(this, ["Apply"]);
                 this.onApply = a;
                 a = new qe(2);
-                var c = new Pb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Size") : "Size");
+                var c = new Pb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Size") : "Size");
                 c.valign = "center";
                 a.add(c);
                 this.intSize = new se(lb.size | 0, .5 * la.hexRadius | 0, 2 * la.hexRadius | 0);
@@ -6625,7 +6625,7 @@ var $lime_init = function (A, r) {
                 this.intSize.set_centered(!0);
                 this.intSize.set_width(60);
                 a.add(this.intSize);
-                c = new Pb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Broken") : "Broken");
+                c = new Pb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Broken") : "Broken");
                 c.valign = "center";
                 a.add(c);
                 this.chkBroken = new lf;
@@ -7101,7 +7101,7 @@ var $lime_init = function (A, r) {
             nf.__name__ = "coogee.ui.Dialog";
             nf.show = function (a, b, c) {
                 null == c && (c = b.getTitle());
-                c = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(c) : c;
+                c = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(c) : c;
                 a = td.show(a, b, c, nf);
                 b.onShow();
                 return a
@@ -7322,14 +7322,14 @@ var $lime_init = function (A, r) {
                 },
                 addItem: function (a, b, c) {
                     null == c && (c = !1);
-                    a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
+                    a = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a;
                     a = new eg(a, null, b);
                     a.setCheck(c);
                     this.add(a);
                     return a
                 },
                 addSubmenu: function (a, b) {
-                    a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
+                    a = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a;
                     a = new eg(a, b);
                     this.add(a);
                     return a
@@ -8192,13 +8192,13 @@ var $lime_init = function (A, r) {
                 this.color = ia.dark;
                 ha.call(this);
                 this.tag = a;
-                this.label = mc.get(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a, ia.format(ia.uiFont, ia.smallSize, ia.white));
+                this.label = mc.get(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a, ia.format(ia.uiFont, ia.smallSize, ia.white));
                 this.label.mouseEnabled = !1;
                 this.addChild(this.label);
                 this.set_buttonMode(!0);
                 this.addEventListener("click", function (d) {
                     d.stopPropagation();
-                    d.shiftKey ? null != b && Fa.showToast(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b) : c(a)
+                    d.shiftKey ? null != b && Fa.showToast(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(b) : b) : c(a)
                 });
                 this.setSize(this.label.get_width() + 8, this.label.get_height() + 8)
             };
@@ -8804,12 +8804,12 @@ var $lime_init = function (A, r) {
                 },
                 addTab: function (a) {
                     this.grid = new qe(2);
-                    this.tabs.addTab(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a, this.grid)
+                    this.tabs.addTab(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a, this.grid)
                 },
                 addColor: function (a, b, c) {
                     var d = this;
                     null == this.grid && this.addTab(null);
-                    var f = new Pb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b);
+                    var f = new Pb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(b) : b);
                     this.grid.add(f);
                     b = new Oc;
                     b.setMargins(0, 10);
@@ -8842,7 +8842,7 @@ var $lime_init = function (A, r) {
                 addMultiColor: function (a, b, c) {
                     var d = this;
                     null == this.grid && this.addTab(null);
-                    var f = new Pb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b);
+                    var f = new Pb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(b) : b);
                     this.grid.add(f);
                     b = new Oc;
                     b.setMargins(0, 10);
@@ -8884,7 +8884,7 @@ var $lime_init = function (A, r) {
                 },
                 addFloat: function (a, b, c, d, f) {
                     null == this.grid && this.addTab(null);
-                    b = new Pb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b);
+                    b = new Pb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(b) : b);
                     this.grid.add(b);
                     c = new kf(c, d, f, 5);
                     this.grid.add(c);
@@ -8899,7 +8899,7 @@ var $lime_init = function (A, r) {
                 },
                 addInt: function (a, b, c, d, f) {
                     null == this.grid && this.addTab(null);
-                    b = new Pb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b);
+                    b = new Pb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(b) : b);
                     this.grid.add(b);
                     c = new se(c, d, f, 7);
                     this.grid.add(c);
@@ -8914,9 +8914,9 @@ var $lime_init = function (A, r) {
                 },
                 addEnum: function (a, b, c, d) {
                     null == this.grid && this.addTab(null);
-                    b = new Pb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b);
+                    b = new Pb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(b) : b);
                     this.grid.add(b);
-                    c = new te(globalThis.mapHubTranslateMenu ? c.map(globalThis.mapHubTranslateMenu) : c, c);
+                    c = new te(globalThis.surielTranslateMenu ? c.map(globalThis.surielTranslateMenu) : c, c);
                     c.set_value(d);
                     c.halign = "fill";
                     this.grid.add(c);
@@ -45292,7 +45292,7 @@ var $lime_init = function (A, r) {
             ia.normalSize = 24;
             Pc.okCancel = ["OK", "Cancel"];
             $b.lastTab = 0;
-            pe.hintText = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("* Shift+click a tag to learn its effect.") : "* Shift+click a tag to learn its effect.";
+            pe.hintText = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("* Shift+click a tag to learn its effect.") : "* Shift+click a tag to learn its effect.";
             La._p0 = new K(-819.2, 0);
             La._p1 = new K(819.2, 0);
             Vb.lx = 0;

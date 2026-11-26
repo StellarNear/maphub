@@ -3062,7 +3062,7 @@ var $lime_init = function (A, t) {
                 "coogee.ui.Dialog";
             ee.show = function (a, b, c) {
                 null == c && (c = b.getTitle());
-                c = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(c) : c;
+                c = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(c) : c;
                 a = Hd.show(a, b, c, ee);
                 b.onShow();
                 return a
@@ -3267,14 +3267,14 @@ var $lime_init = function (A, t) {
                 },
                 addItem: function (a, b, c) {
                     null == c && (c = !1);
-                    a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
+                    a = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a;
                     a = new ff(a, null, b);
                     a.setCheck(c);
                     this.add(a);
                     return a
                 },
                 addSubmenu: function (a, b) {
-                    a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
+                    a = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a;
                     a = new ff(a, b);
                     this.add(a);
                     return a
@@ -8618,7 +8618,7 @@ var $lime_init = function (A, t) {
                 if (null == Ma.grammar) {
                     Oe.rng = C.float;
                     var grammar = JSON.parse(ac.getText("grammar"));
-                    Ma.grammar = new hk(globalThis.mapHubCityGrammar ? globalThis.mapHubCityGrammar(grammar) : grammar);
+                    Ma.grammar = new hk(globalThis.surielCityGrammar ? globalThis.surielCityGrammar(grammar) : grammar);
                     Ma.grammar.defaultSelector = $h;
                     Ma.grammar.addModifiers(jb.get());
                     var a = Ma.grammar,
@@ -8748,7 +8748,7 @@ var $lime_init = function (A, t) {
             Ma.getDistrictNoun = function (a) {
                 a = a.faces.length + Math.floor((C.seed = 48271 * C.seed % 2147483647 | 0) / 2147483647 * 3);
                 var noun = 2 >= a ? "quarter" : 6 > a ? "ward" : 12 > a ? "district" : "town";
-                return globalThis.mapHubDistrictNoun ? globalThis.mapHubDistrictNoun(noun) : noun
+                return globalThis.surielDistrictNoun ? globalThis.surielDistrictNoun(noun) : noun
             };
             Ma.getDirection = function (a) {
                 var b = null,
@@ -13447,7 +13447,7 @@ var $lime_init = function (A, t) {
                 activate: function () {
                     Pb.prototype.activate.call(this);
                     var scene = this;
-                    globalThis.mapHubOpenMenu = function () {
+                    globalThis.surielOpenMenu = function () {
                         u.hideMenu();
                         var menu = new dd;
                         scene.onContext(menu);
@@ -13459,7 +13459,7 @@ var $lime_init = function (A, t) {
                 },
                 deactivate: function () {
                     Pb.prototype.deactivate.call(this);
-                    globalThis.mapHubOpenMenu = null;
+                    globalThis.surielOpenMenu = null;
                     ia.map = null;
                     this.stage.removeEventListener("rightClick", l(this, this.onRightClick))
                 },
@@ -13995,12 +13995,12 @@ var $lime_init = function (A, t) {
                 oc.call(this);
                 this.tabs = new ig;
                 this.tabs.set_rowSize(4);
-                this.tabs.addTab(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Graphics") : "Graphics", this.colors());
-                this.tabs.addTab(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Elements") : "Elements", this.elements());
-                this.tabs.addTab(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Buildings") : "Buildings", this.buildings());
-                this.tabs.addTab(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Outline") : "Outline", this.outline());
-                this.tabs.addTab(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Text") : "Text", this.text());
-                this.tabs.addTab(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Misc") : "Misc", this.misc());
+                this.tabs.addTab(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Graphics") : "Graphics", this.colors());
+                this.tabs.addTab(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Elements") : "Elements", this.elements());
+                this.tabs.addTab(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Buildings") : "Buildings", this.buildings());
+                this.tabs.addTab(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Outline") : "Outline", this.outline());
+                this.tabs.addTab(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Text") : "Text", this.text());
+                this.tabs.addTab(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Misc") : "Misc", this.misc());
                 this.add(this.tabs);
                 this.tabs.change.add(function (a) {
                     ke.lastTab = a
@@ -14015,7 +14015,7 @@ var $lime_init = function (A, t) {
                     return "Display"
                 },
                 addCheckbox: function (a, b, c, d, f) {
-                    a = new ud(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a);
+                    a = new ud(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a);
                     a.set_value(ba.get(b, c));
                     a.changed.add(function (a) {
                         ba.set(b, a);
@@ -14026,7 +14026,7 @@ var $lime_init = function (A, t) {
                 },
                 addDropDown: function (a, b, c, d, f) {
                     this.addLabel(a, d);
-                    a = new Rc(globalThis.mapHubTranslateMenu ? c.map(globalThis.mapHubTranslateMenu) : c, c);
+                    a = new Rc(globalThis.surielTranslateMenu ? c.map(globalThis.surielTranslateMenu) : c, c);
                     a.set_value(ba.get(b));
                     a.set_width(120);
                     a.set_centered(!0);
@@ -14055,14 +14055,14 @@ var $lime_init = function (A, t) {
                     a.add(b)
                 },
                 addLabel: function (a, b) {
-                    a = new Ib(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a);
+                    a = new Ib(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a);
                     a.valign = "center";
                     b.add(a)
                 },
                 colors: function () {
                     var a = new gb;
                     a.setMargins(10, 8);
-                    var b = new fb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Color scheme") : "Color scheme", ia.editColors);
+                    var b = new fb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Color scheme") : "Color scheme", ia.editColors);
                     a.add(b);
                     this.addCheckbox("Thin lines", "thin_lines", !1, a, function (a) {
                         K.thinLines = a;
@@ -14083,7 +14083,7 @@ var $lime_init = function (A, t) {
                     b.setMargins(0, 8);
                     this.addLabel("Font size", b);
                     var sizes = ["Small", "Medium", "Large"];
-                    var c = Rc.ofInts(globalThis.mapHubTranslateMenu ? sizes.map(globalThis.mapHubTranslateMenu) : sizes);
+                    var c = Rc.ofInts(globalThis.surielTranslateMenu ? sizes.map(globalThis.surielTranslateMenu) : sizes);
                     c.set_value(ba.get("text_size", 1));
                     c.set_width(120);
                     c.set_centered(!0);
@@ -14183,7 +14183,7 @@ var $lime_init = function (A, t) {
                     });
                     c.outline_fields = d;
                     a.add(b);
-                    b = new fb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Toggle all") : "Toggle all",
+                    b = new fb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Toggle all") : "Toggle all",
                         function () {
                             var a = c,
                                 b = a,

@@ -2,9 +2,13 @@
 
 Renseigner `homepage` dans `package.json` ne publie rien et ne crée pas de domaine. Le workflow actuel `.github/workflows/publish.yml` est lancé manuellement et envoie `dist/` vers un serveur FTP configuré avec des secrets et variables GitHub ; ce n'est pas GitHub Pages. Ne le lancez pas sans vérifier son serveur et sa configuration : la synchronisation distante peut supprimer des fichiers.
 
+La section **About** du dépôt GitHub est indépendante de la publication : son bouton en forme d'engrenage permet de renseigner la description, l'adresse du site et les sujets, mais ne déploie pas le site.
+
 ## Avec GitHub Pages
 
 Le site utilise actuellement des chemins absolus à partir de `/` (ressources, liens, service worker). Il doit donc être servi à la racine d'un domaine. L'adresse habituelle d'un site de projet, `https://UTILISATEUR.github.io/DEPOT/`, ne fonctionnera pas correctement sans adapter les chemins, la configuration Vite et le service worker.
+
+Pour ce dépôt, l'adresse de projet serait `https://stellarnear.github.io/suriel/` : elle nécessite ces adaptations, ainsi qu'un workflow de construction et déploiement. Dans **Settings > Pages > Build and deployment**, choisissez alors **GitHub Actions**. Un déploiement automatique doit être déclenché par les changements sur `main` et publier le contenu construit de `dist/`, pas les sources.
 
 La solution la plus simple sans modifier ces chemins est d'utiliser un dépôt de site utilisateur nommé `UTILISATEUR.github.io`, ou un domaine personnalisé configuré sur GitHub Pages. Dans ce dépôt :
 

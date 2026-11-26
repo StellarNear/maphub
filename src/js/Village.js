@@ -2923,7 +2923,7 @@ var $lime_init = function (E, u) {
             ve.__name__ = "coogee.ui.Dialog";
             ve.show = function (a, b, c) {
                 null == c && (c = b.getTitle());
-                c = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(c) : c;
+                c = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(c) : c;
                 a = id.show(a, b, c,
                     ve);
                 b.onShow();
@@ -3154,14 +3154,14 @@ var $lime_init = function (E, u) {
                 },
                 addItem: function (a, b, c) {
                     null == c && (c = !1);
-                    a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
+                    a = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a;
                     a = new Qe(a, null, b);
                     a.setCheck(c);
                     this.add(a);
                     return a
                 },
                 addSubmenu: function (a, b) {
-                    a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
+                    a = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a;
                     a = new Qe(a, b);
                     this.add(a);
                     return a
@@ -4010,13 +4010,13 @@ var $lime_init = function (E, u) {
                 this.color = B.dark;
                 ba.call(this);
                 this.tag = a;
-                this.label = Dc.get(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a, B.format(B.uiFont, B.smallSize, B.white));
+                this.label = Dc.get(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a, B.format(B.uiFont, B.smallSize, B.white));
                 this.label.mouseEnabled = !1;
                 this.addChild(this.label);
                 this.set_buttonMode(!0);
                 this.addEventListener("click", function (d) {
                     d.stopPropagation();
-                    d.shiftKey ? null != b && w.showToast(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b) :
+                    d.shiftKey ? null != b && w.showToast(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(b) : b) :
                         c(a)
                 });
                 this.setSize(this.label.get_width() + 8, this.label.get_height() + 8)
@@ -4258,12 +4258,12 @@ var $lime_init = function (E, u) {
                 c.add(this.size);
                 var d = new kd;
                 d.setMargins(0, 10);
-                this.bold = new sd(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Bold") : "Bold");
+                this.bold = new sd(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Bold") : "Bold");
                 this.bold.changed.add(function (b) {
                     a.updatePreview()
                 });
                 d.add(this.bold);
-                this.italic = new sd(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Italic") : "Italic");
+                this.italic = new sd(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Italic") : "Italic");
                 this.italic.changed.add(function (b) {
                     a.updatePreview()
                 });
@@ -4644,12 +4644,12 @@ var $lime_init = function (E, u) {
                 },
                 addTab: function (a) {
                     this.grid = new Te(2);
-                    this.tabs.addTab(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a, this.grid)
+                    this.tabs.addTab(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a, this.grid)
                 },
                 addColor: function (a, b, c) {
                     var d = this;
                     null == this.grid && this.addTab(null);
-                    var f = new xb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b);
+                    var f = new xb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(b) : b);
                     this.grid.add(f);
                     b = new kd;
                     b.setMargins(0, 10);
@@ -4682,7 +4682,7 @@ var $lime_init = function (E, u) {
                 addMultiColor: function (a, b, c) {
                     var d = this;
                     null == this.grid && this.addTab(null);
-                    var f = new xb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b);
+                    var f = new xb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(b) : b);
                     this.grid.add(f);
                     b = new kd;
                     b.setMargins(0, 10);
@@ -4725,7 +4725,7 @@ var $lime_init = function (E, u) {
                 addFont: function (a, b, c, d, f) {
                     null == d && (d = !1);
                     null == this.grid && this.addTab(null);
-                    b = new xb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b);
+                    b = new xb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(b) : b);
                     this.grid.add(b);
                     null != f && (c.embedded = f);
                     c = new Cd(c, d ? Dd.fontFace2text : Dd.font2text, null, Cd.editInForm(Dd, b.get_text(), this));
@@ -4741,7 +4741,7 @@ var $lime_init = function (E, u) {
                 },
                 addFloat: function (a, b, c, d, f) {
                     null == this.grid && this.addTab(null);
-                    b = new xb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b);
+                    b = new xb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(b) : b);
                     this.grid.add(b);
                     c = new Za(c, d, f, 5);
                     this.grid.add(c);
@@ -4756,7 +4756,7 @@ var $lime_init = function (E, u) {
                 },
                 addInt: function (a, b, c, d, f) {
                     null == this.grid && this.addTab(null);
-                    b = new xb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b);
+                    b = new xb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(b) : b);
                     this.grid.add(b);
                     c = new Bd(c, d, f, 7);
                     this.grid.add(c);
@@ -4771,9 +4771,9 @@ var $lime_init = function (E, u) {
                 },
                 addEnum: function (a, b, c, d) {
                     null == this.grid && this.addTab(null);
-                    b = new xb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b);
+                    b = new xb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(b) : b);
                     this.grid.add(b);
-                    c = new jd(globalThis.mapHubTranslateMenu ? c.map(globalThis.mapHubTranslateMenu) : c, c);
+                    c = new jd(globalThis.surielTranslateMenu ? c.map(globalThis.surielTranslateMenu) : c, c);
                     c.set_value(d);
                     c.halign = "fill";
                     this.grid.add(c);
@@ -4787,7 +4787,7 @@ var $lime_init = function (E, u) {
                 addCheck: function (a, b, c) {
                     null == this.grid &&
                     this.addTab(null);
-                    b = new xb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b);
+                    b = new xb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(b) : b);
                     this.grid.add(b);
                     b = new sd;
                     b.set_value(c);
@@ -9957,7 +9957,7 @@ var $lime_init = function (E, u) {
                 if (null == ac.grammar) {
                     var grammar = JSON.parse(gc.getText("grammar"));
                     Ae.rng = m.float;
-                    ac.grammar = new mj(globalThis.mapHubVillageGrammar ? globalThis.mapHubVillageGrammar(grammar) : grammar);
+                    ac.grammar = new mj(globalThis.surielVillageGrammar ? globalThis.surielVillageGrammar(grammar) : grammar);
                     ac.grammar.defaultSelector = Ah;
                     ac.grammar.addModifiers(cb.get());
                     ac.grammar.addExternal("proper", ac.proper);
@@ -16048,7 +16048,7 @@ var $lime_init = function (E, u) {
                         new Ig(this))
                     if (!fc.preview) {
                         var scene = this;
-                        globalThis.mapHubOpenMenu = function () {
+                        globalThis.surielOpenMenu = function () {
                             w.hideMenu();
                             scene.showContextMenu(true);
                         };
@@ -16600,7 +16600,7 @@ var $lime_init = function (E, u) {
                 Qb.call(this, ["Reset"]);
                 this.region = a;
                 var c = new Te(3);
-                a = new xb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Position") : "Position");
+                a = new xb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Position") : "Position");
                 a.valign = "center";
                 c.add(a);
                 this.cmbPosition = jd.ofStrings([Ya.CENTER, Ya.HEART, Ya.SUN]);
@@ -16633,7 +16633,7 @@ var $lime_init = function (E, u) {
                 this.slDarkVividness =
                     a("Shadow color");
                 c.add(new ba);
-                c.add(this.chkEnable = new sd(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Enable") : "Enable"));
+                c.add(this.chkEnable = new sd(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Enable") : "Enable"));
                 this.chkEnable.set_value(na.showDramatic);
                 this.chkEnable.changed.add(function (a) {
                     b.onChange(0)
@@ -16673,28 +16673,28 @@ var $lime_init = function (E, u) {
                 this.village = a;
                 this.onOK = b;
                 b = new Te(3);
-                b.add(new xb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Name") : "Name"));
+                b.add(new xb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Name") : "Name"));
                 this.inputName = new Ec(a.name);
                 this.inputName.set_width(200);
                 b.add(this.inputName);
-                var d = new pb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Roll") : "Roll");
+                var d = new pb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Roll") : "Roll");
                 d.click.add(function () {
                     c.inputName.set_text(a.rollName())
                 });
                 d.set_height(this.inputName.get_height());
                 b.add(d);
-                b.add(new xb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Population") : "Population"));
+                b.add(new xb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Population") : "Population"));
                 this.inputPopulation = new Bd(a.pop, 1, 1E4);
                 this.inputPopulation.set_width(200);
                 b.add(this.inputPopulation);
-                d = new pb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Roll") : "Roll");
+                d = new pb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Roll") : "Roll");
                 d.click.add(function () {
                     c.inputPopulation.set_value(a.rollPopulation())
                 });
                 d.set_height(this.inputPopulation.get_height());
                 b.add(d);
                 b.addEmpty();
-                this.chkHidePop = new sd(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Hide population") : "Hide population");
+                this.chkHidePop = new sd(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Hide population") : "Hide population");
                 this.chkHidePop.set_value(hb.get("hidePopulation", !1));
                 b.add(this.chkHidePop);
                 this.add(b)
@@ -16735,7 +16735,7 @@ var $lime_init = function (E, u) {
                     var a = this,
                         b = new kd;
                     b.setMargins(0, 10);
-                    var c = new xb(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Size:") : "Size:");
+                    var c = new xb(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Size:") : "Size:");
                     c.valign = "center";
                     b.add(c);
                     this.inpWidth = new Bd(this.bp.width | 0, 200, 1500, 4);
@@ -48986,7 +48986,7 @@ var $lime_init = function (E, u) {
             Ub.okCancel = ["OK", "Cancel"];
             Dd.maxFaceLength = 13;
             uc.lastTab = 0;
-            ze.hintText = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("* Shift+click a tag to learn its effect.") : "* Shift+click a tag to learn its effect.";
+            ze.hintText = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("* Shift+click a tag to learn its effect.") : "* Shift+click a tag to learn its effect.";
             Ua.SCALE = 1;
             Ua.CX = 0;
             Ua.CY = 0;

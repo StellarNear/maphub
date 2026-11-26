@@ -49,19 +49,6 @@ Les structures Protobuf sont définies dans [protobuf](./protobuf). L'import acc
 
 Structures principales : [GeoObj](./protobuf/data/geo/obj.proto), [DwellingsObj](./protobuf/data/dwellings/obj.proto) et les palettes [ville](./protobuf/data/palette/mfcg.proto), [village](./protobuf/data/palette/village.proto), [bâtiments](./protobuf/data/palette/dwellings.proto), [visionneuse](./protobuf/data/palette/viewer.proto), [grotte](./protobuf/data/palette/cave.proto) et [clairière](./protobuf/data/palette/glade.proto). Le format Protobuf est recommandé pour les nouvelles intégrations ; JSON conserve notamment la compatibilité avec les anciens formats.
 
-## Galerie
-
-![Menus des générateurs](.github/img/all-menu.png)
-
-![Menu des grottes](.github/img/to_cave.png)
-![Menu des bâtiments](.github/img/to_dwellings.png)
-![Menu des villages](.github/img/to_village.png)
-![Menu des villes](.github/img/to_mfcg.png)
-![Menu de la visionneuse](.github/img/to_viewer.png)
-
-![Application installée sur téléphone](.github/img/mob_app.jpg)
-![Exemple de carte sur mobile](.github/img/mob_city.jpg)
-
 ## Contribution et licence
 
 Les contributions sont bienvenues sous forme de pull requests décrivant les modifications. Le code est publié sous [MPL-2.0](./LICENSE).

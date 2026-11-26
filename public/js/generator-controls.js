@@ -195,29 +195,29 @@
     // Generators rewrite their URL as maps change; keep the initial choice stable.
     var selectedLanguage = readLanguage();
 
-    globalThis.mapHubTranslateMenu = function (text) {
+    globalThis.surielTranslateMenu = function (text) {
         return selectedLanguage === "fr" && Object.prototype.hasOwnProperty.call(labels, text) ? labels[text] : text;
     };
-    globalThis.mapHubRoomName = function (text) {
+    globalThis.surielRoomName = function (text) {
         return selectedLanguage === "fr" && Object.prototype.hasOwnProperty.call(roomNames, text) ? roomNames[text] : text;
     };
-    globalThis.mapHubRoomShort = function (name, original) {
+    globalThis.surielRoomShort = function (name, original) {
         if (selectedLanguage !== "fr") return original;
-        return {bathroom: "S. d'eau", stairhall: "Escalier"}[name] || globalThis.mapHubRoomName(name);
+        return {bathroom: "S. d'eau", stairhall: "Escalier"}[name] || globalThis.surielRoomName(name);
     };
-    globalThis.mapHubFloorLabel = function (floor, count) {
+    globalThis.surielFloorLabel = function (floor, count) {
         if (selectedLanguage !== "fr") return floor === -1 ? "B" : floor === 0 ? "GF" : floor < count ? floor + "F" : "R";
         return floor === -1 ? "Sous-sol" : floor === 0 ? "RDC" : floor < count ? floor + (floor === 1 ? "er" : "e") : "Toit";
     };
-    globalThis.mapHubSideLabel = function (side) {
+    globalThis.surielSideLabel = function (side) {
         return selectedLanguage === "fr" ? {L: "Gauche", F: "Devant", R: "Droite", B: "Arrière"}[side] : side;
     };
-    globalThis.mapHubModeLabel = function (mode) {
+    globalThis.surielModeLabel = function (mode) {
         return selectedLanguage === "fr" ? {P: "Plan", E: "Façade"}[mode] : mode;
     };
 
     // Keep the original grammar untouched in English and on imported maps.
-    globalThis.mapHubCityGrammar = function (grammar) {
+    globalThis.surielCityGrammar = function (grammar) {
         if (selectedLanguage !== "fr") return grammar;
         return Object.assign(grammar, {
             city: ["#proper#"],
@@ -235,12 +235,12 @@
             north: "nord", south: "sud", east: "est", west: "ouest"
         });
     };
-    globalThis.mapHubDistrictNoun = function (noun) {
+    globalThis.surielDistrictNoun = function (noun) {
         if (selectedLanguage !== "fr") return noun;
         return {quarter: "quartier", ward: "quartier", district: "quartier", town: "bourg"}[noun] || noun;
     };
 
-    globalThis.mapHubVillageGrammar = function (grammar) {
+    globalThis.surielVillageGrammar = function (grammar) {
         if (selectedLanguage !== "fr") return grammar;
         return Object.assign(grammar, {
             village: ["#placeName#", "#placeName#", "#placeName#-sur-#riverName#", "RIVER?-#placeName#-sur-#riverName#"],
@@ -259,7 +259,7 @@
             special: ["Maison de guilde", "Maison commune", "Archives", "Bibliothèque", "SHORE?-Phare"]
         });
     };
-    globalThis.mapHubDwellingGrammar = function (grammar) {
+    globalThis.surielDwellingGrammar = function (grammar) {
         if (selectedLanguage !== "fr") return grammar;
         return Object.assign(grammar, {
             title: ["Maison des #feature#", "Demeure de #place#", "SMALL?-Chaumière de #place#", "LARGE?-Manoir des #feature#", "TALL?-Tour de #place#"],
@@ -267,7 +267,7 @@
             place: ["Clairval", "Bellecombe", "Rochebrune", "Luneterre", "Hautecombe", "Boisclair"]
         });
     };
-    globalThis.mapHubCaveGrammar = function (grammar, forest) {
+    globalThis.surielCaveGrammar = function (grammar, forest) {
         if (selectedLanguage !== "fr") return grammar;
         return Object.assign(grammar, {
             name: ["#location# des #mystery#", "#location# du #guardian#", "#location# de #proper#"],
@@ -277,10 +277,10 @@
         });
     };
 
-    globalThis.mapHubAddControls = function () {
+    globalThis.surielAddControls = function () {
         var lang = selectedLanguage;
         document.documentElement.lang = lang;
-        document.title = globalThis.mapHubTranslateMenu(document.title);
+        document.title = globalThis.surielTranslateMenu(document.title);
         var controls = document.createElement("div");
         controls.className = "generator-controls";
         var back = document.createElement("button");
@@ -299,7 +299,7 @@
         button.textContent = "Menu";
         button.setAttribute("aria-label", lang === "fr" ? "Ouvrir le menu de génération" : "Open generation menu");
         button.addEventListener("click", function () {
-            if (typeof globalThis.mapHubOpenMenu === "function") globalThis.mapHubOpenMenu();
+            if (typeof globalThis.surielOpenMenu === "function") globalThis.surielOpenMenu();
             else console.warn("The generator menu is not ready.");
         });
         controls.appendChild(back);

@@ -10,7 +10,7 @@ import * as DataViewer from "./shared/data/Viewer.js";
 import * as DataProto from "./struct/data.js";
 
 const params = FuncProto.initParams(JSON.parse(String.raw`{{EMBED_PARAMETERS_JSON_VIEWER}}`));
-const baseTitle = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(document.title) : document.title;
+const baseTitle = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(document.title) : document.title;
 let mapName = "";
 let isLockedMap = false;
 let returnBuffer = null;
@@ -14077,7 +14077,7 @@ if (params !== null) (function (S, u) {
             Jf.__name__ = "coogee.ui.Dialog";
             Jf.show = function (a, b, c) {
                 null == c && (c = b.getTitle());
-                c = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(c) : c;
+                c = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(c) : c;
                 a = Fd.show(a, b, c,
                     Jf);
                 b.onShow();
@@ -14258,14 +14258,14 @@ if (params !== null) (function (S, u) {
                 },
                 addItem: function (a, b, c) {
                     null == c && (c = !1);
-                    a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
+                    a = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a;
                     a = new Hg(a, null, b);
                     a.setCheck(c);
                     this.add(a);
                     return a
                 },
                 addSubmenu: function (a, b) {
-                    a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
+                    a = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a;
                     a = new Hg(a, b);
                     this.add(a);
                     return a
@@ -18889,7 +18889,7 @@ if (params !== null) (function (S, u) {
                 activate: function () {
                     oe.prototype.activate.call(this);
                     var scene = this;
-                    globalThis.mapHubOpenMenu = function () {
+                    globalThis.surielOpenMenu = function () {
                         Ma.hideMenu();
                         scene.onContext(true);
                     };
@@ -18904,7 +18904,7 @@ if (params !== null) (function (S, u) {
                 },
                 deactivate: function () {
                     oe.prototype.deactivate.call(this);
-                    globalThis.mapHubOpenMenu = null;
+                    globalThis.surielOpenMenu = null;
                     this.removeEventListener("mouseDown", p(this, this.onMouseDown));
                     this.removeEventListener("mouseUp", p(this, this.onMouseUp));
                     this.removeEventListener("mouseWheel", p(this, this.onWheel));

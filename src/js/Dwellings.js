@@ -3044,7 +3044,7 @@ var $lime_init = function (K, v) {
             we.__name__ = "coogee.ui.Dialog";
             we.show = function (a, b, c) {
                 null == c && (c = b.getTitle());
-                c = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(c) : c;
+                c = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(c) : c;
                 a = Jc.show(a, b, c, we);
                 b.onShow();
                 return a
@@ -3058,7 +3058,7 @@ var $lime_init = function (K, v) {
                 __class__: we
             });
             var Lc = function (a, b) {
-                if (globalThis.mapHubTranslateMenu) a = a.map(globalThis.mapHubTranslateMenu);
+                if (globalThis.surielTranslateMenu) a = a.map(globalThis.surielTranslateMenu);
                 this.update = new gc;
                 var c = this;
                 this.values = b;
@@ -3115,7 +3115,7 @@ var $lime_init = function (K, v) {
             Lc.__super__ = R;
             Lc.prototype = w(R.prototype, {
                 load: function (a, b) {
-                    if (globalThis.mapHubTranslateMenu) a = a.map(globalThis.mapHubTranslateMenu);
+                    if (globalThis.surielTranslateMenu) a = a.map(globalThis.surielTranslateMenu);
                     var c = this;
                     this.labels = a;
                     this.values = b;
@@ -3191,7 +3191,7 @@ var $lime_init = function (K, v) {
             });
             var Cf = function (a) {
                 R.call(this);
-                a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
+                a = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a;
                 this.tf = Gc.get(a, ia.format(ia.uiFont, ia.smallSize, ia.black));
                 this.tf.set_wordWrap(!0);
                 this.tf.set_x(-2);
@@ -3225,7 +3225,7 @@ var $lime_init = function (K, v) {
             var Vb = function (a, b) {
                 null == b && (b = !1);
                 R.call(this);
-                a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
+                a = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a;
                 this.tf = Gc.get(a, ia.format(ia.uiFont,
                     b ? ia.smallSize : ia.normalSize, ia.black));
                 this.tf.set_x(-2);
@@ -3299,14 +3299,14 @@ var $lime_init = function (K, v) {
                     },
                     addItem: function (a, b, c) {
                         null == c && (c = !1);
-                        a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
+                        a = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a;
                         a = new Zd(a, null, b);
                         a.setCheck(c);
                         this.add(a);
                         return a
                     },
                     addSubmenu: function (a, b) {
-                        a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
+                        a = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a;
                         a = new Zd(a, b);
                         this.add(a);
                         return a
@@ -4183,13 +4183,13 @@ var $lime_init = function (K, v) {
                 this.color = ia.dark;
                 R.call(this);
                 this.tag = a;
-                this.label = Gc.get(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a, ia.format(ia.uiFont, ia.smallSize, ia.white));
+                this.label = Gc.get(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(a) : a, ia.format(ia.uiFont, ia.smallSize, ia.white));
                 this.label.mouseEnabled = !1;
                 this.addChild(this.label);
                 this.set_buttonMode(!0);
                 this.addEventListener("click", function (d) {
                     d.stopPropagation();
-                    d.shiftKey ? null != b && ma.showToast(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(b) : b) :
+                    d.shiftKey ? null != b && ma.showToast(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu(b) : b) :
                         c(a)
                 });
                 this.setSize(this.label.get_width() + 8, this.label.get_height() + 8)
@@ -5676,7 +5676,7 @@ var $lime_init = function (K, v) {
                 return Fa
             };
             zb.getFloorLabel = function (a, b) {
-                if (globalThis.mapHubFloorLabel) return globalThis.mapHubFloorLabel(a, b);
+                if (globalThis.surielFloorLabel) return globalThis.surielFloorLabel(a, b);
                 switch (a) {
                     case -1:
                         return "B";
@@ -7155,7 +7155,7 @@ var $lime_init = function (K, v) {
                 if (null == Md.grammar) {
                     var grammar = JSON.parse(Yb.getText("grammar"));
                     Me.rng = t.float;
-                    Md.grammar = new Bk(globalThis.mapHubDwellingGrammar ? globalThis.mapHubDwellingGrammar(grammar) : grammar);
+                    Md.grammar = new Bk(globalThis.surielDwellingGrammar ? globalThis.surielDwellingGrammar(grammar) : grammar);
                     Md.grammar.addModifiers(Ra.get());
                     Md.grammar.defaultSelector = Rh;
                 }
@@ -9443,7 +9443,7 @@ var $lime_init = function (K, v) {
                 Jb.call(this);
                 this.house = fd.inst;
                 this.modeSelector = new li;
-                if (globalThis.mapHubAddControls) {
+                if (globalThis.surielAddControls) {
                     this.modeSelector.set_x(110);
                     this.modeSelector.btnMenu.set_visible(!1);
                 }
@@ -9465,7 +9465,7 @@ var $lime_init = function (K, v) {
                 activate: function () {
                     Jb.prototype.activate.call(this);
                     var scene = this;
-                    globalThis.mapHubOpenMenu = function () {
+                    globalThis.surielOpenMenu = function () {
                         ma.hideMenu();
                         scene.showContextMenu(56, 48);
                     };
@@ -9476,7 +9476,7 @@ var $lime_init = function (K, v) {
                 },
                 deactivate: function () {
                     Jb.prototype.deactivate.call(this);
-                    globalThis.mapHubOpenMenu = null;
+                    globalThis.surielOpenMenu = null;
                     ma.layer.removeChild(this.modeSelector);
                     this.stage.removeEventListener("touchTap", m(this, this.onTap));
                     this.stage.removeEventListener("click", m(this, this.onClick));
@@ -9723,7 +9723,7 @@ var $lime_init = function (K, v) {
                     activate: function () {
                         ub.prototype.activate.call(this);
                         this.stage.addEventListener("mouseDown", m(this, this.onMouseDown));
-                        ma.showToast(globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("Hold Shift to specify the entrance location.") : "Hold Shift to specify the entrance location.")
+                        ma.showToast(globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("Hold Shift to specify the entrance location.") : "Hold Shift to specify the entrance location.")
                     },
                     deactivate: function () {
                         ub.prototype.deactivate.call(this);
@@ -10757,12 +10757,12 @@ var $lime_init = function (K, v) {
             qi.prototype = w(Od.prototype, {
                 update: function (a) {
                     this.clear();
-                    null != a.basement && this.addButton(globalThis.mapHubFloorLabel ? globalThis.mapHubFloorLabel(-1, a.floors.length) : "B", -1);
+                    null != a.basement && this.addButton(globalThis.surielFloorLabel ? globalThis.surielFloorLabel(-1, a.floors.length) : "B", -1);
                     for (var b = 0, c = a.floors.length; b < c;) {
                         var d = b++;
-                        this.addButton(globalThis.mapHubFloorLabel ? globalThis.mapHubFloorLabel(d, a.floors.length) : 0 == d ? "GF" : d + "F", d)
+                        this.addButton(globalThis.surielFloorLabel ? globalThis.surielFloorLabel(d, a.floors.length) : 0 == d ? "GF" : d + "F", d)
                     }
-                    Ea.detailed && this.addButton(globalThis.mapHubFloorLabel ? globalThis.mapHubFloorLabel(a.floors.length, a.floors.length) : "R", a.floors.length)
+                    Ea.detailed && this.addButton(globalThis.surielFloorLabel ? globalThis.surielFloorLabel(a.floors.length, a.floors.length) : "R", a.floors.length)
                 },
                 __class__: qi
             });
@@ -10771,8 +10771,8 @@ var $lime_init = function (K, v) {
                 this.mode = new gc;
                 Od.call(this);
                 this.btnMenu = this.addButton("=", "menu");
-                this.addButton(globalThis.mapHubModeLabel ? globalThis.mapHubModeLabel("P") : "P", "plan");
-                this.addButton(globalThis.mapHubModeLabel ? globalThis.mapHubModeLabel("E") : "E", "elevation");
+                this.addButton(globalThis.surielModeLabel ? globalThis.surielModeLabel("P") : "P", "plan");
+                this.addButton(globalThis.surielModeLabel ? globalThis.surielModeLabel("E") : "E", "elevation");
                 this.click.add(m(this, this.onButton))
             };
             h["dwellings.ui.ModeSelector"] = li;
@@ -10852,7 +10852,7 @@ var $lime_init = function (K, v) {
                 var d = a.name;
                 this.txtName = new pc(null != d ? d : "");
                 this.txtName.set_width(240);
-                this.txtName.set_prompt(null != a.type ? Qh.capitalize(globalThis.mapHubRoomName ? globalThis.mapHubRoomName(a.type.name) : a.type.name) : "");
+                this.txtName.set_prompt(null != a.type ? Qh.capitalize(globalThis.surielRoomName ? globalThis.surielRoomName(a.type.name) : a.type.name) : "");
                 this.txtName.enter.add(function (a) {
                     c.onEnter()
                 });
@@ -10890,10 +10890,10 @@ var $lime_init = function (K, v) {
                 update: function (a) {
                     this.clear();
                     a = fa.entrance.door.dir;
-                    this.addButton(globalThis.mapHubSideLabel ? globalThis.mapHubSideLabel("L") : "L", a.cw);
-                    this.addButton(globalThis.mapHubSideLabel ? globalThis.mapHubSideLabel("F") : "F", a);
-                    this.addButton(globalThis.mapHubSideLabel ? globalThis.mapHubSideLabel("R") : "R", a.ccw);
-                    this.addButton(globalThis.mapHubSideLabel ? globalThis.mapHubSideLabel("B") : "B", a.op);
+                    this.addButton(globalThis.surielSideLabel ? globalThis.surielSideLabel("L") : "L", a.cw);
+                    this.addButton(globalThis.surielSideLabel ? globalThis.surielSideLabel("F") : "F", a);
+                    this.addButton(globalThis.surielSideLabel ? globalThis.surielSideLabel("R") : "R", a.ccw);
+                    this.addButton(globalThis.surielSideLabel ? globalThis.surielSideLabel("B") : "B", a.op);
                     this.looped = !0
                 },
                 __class__: oi
@@ -11979,7 +11979,7 @@ var $lime_init = function (K, v) {
                                 d[c];
                             ++c;
                             if (Qc.showNumbers) var q = E.string(a.rooms.indexOf(k) + 1);
-                            else q = k.name, null == q && (q = k.type, q = null != q ? globalThis.mapHubRoomName ? globalThis.mapHubRoomName(q.name) : q.name : null);
+                            else q = k.name, null == q && (q = k.type, q = null != q ? globalThis.surielRoomName ? globalThis.surielRoomName(q.name) : q.name : null);
                             if (null != q && "" != q) {
                                 var l = ca.difference(k.area, g);
                                 0 == l.length && (l = k.area);
@@ -11989,7 +11989,7 @@ var $lime_init = function (K, v) {
                                 var h = q.split(" ");
                                 if (1 == h.length) var n = this.createLabel(q, l);
                                 else n = this.createLabel(q, l), h = this.createLabel(h.join("\n"), l), n = n.get_scaleX() > h.get_scaleX() ? n : h;
-                                .01 > n.get_scaleX() && q != k.name && null != k.type.short && (n = this.createLabel(globalThis.mapHubRoomShort ? globalThis.mapHubRoomShort(k.type.name, k.type.short) : k.type.short,
+                                .01 > n.get_scaleX() && q != k.name && null != k.type.short && (n = this.createLabel(globalThis.surielRoomShort ? globalThis.surielRoomShort(k.type.name, k.type.short) : k.type.short,
                                     l));
                                 n.set_x(l.x + l.width / 2);
                                 n.set_y(l.y + l.height / 2);
@@ -53077,7 +53077,7 @@ var $lime_init = function (K, v) {
             qc.okCancel = ["OK", "Cancel"];
             Bc.maxFaceLength = 13;
             Sb.lastTab = 0;
-            jd.hintText = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu("* Shift+click a tag to learn its effect.") : "* Shift+click a tag to learn its effect.";
+            jd.hintText = globalThis.surielTranslateMenu ? globalThis.surielTranslateMenu("* Shift+click a tag to learn its effect.") : "* Shift+click a tag to learn its effect.";
             zb.MAX_SIZE = 16777216;
             zb.MARGINS = 4;
             zb.embeddedScanned = !1;
