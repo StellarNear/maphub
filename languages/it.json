@@ -173,7 +173,7 @@
           "d": "rigenera le stanze"
         },
         {
-          "k": "↑/↓ (или ←/→)",
+          "k": "↑/↓ (o ←/→)",
           "d": "cambiare piano"
         },
         {
@@ -488,11 +488,11 @@
           "d": "spostamenti aggiuntivi (come nella fonte)"
         },
         {
-          "k": "Стрелки",
+          "k": "Frecce",
           "d": "navigazione"
         }
       ]
     }
   },
-  "introHtml": "<p>Questa pagina è un hub compatto per diversi generatori procedurali di mappe e planimetrie. L’idea è semplice: aprire uno strumento, ottenere rapidamente un risultato, ritoccare i parametri se serve ed esportare per qualsiasi scopo.</p><p><strong>In che cosa questo hub è diverso dai generatori watabou?</strong></p><ul><li>È tutto disponibile localmente come PWA anche senza Internet; anche tutti i link sono interni. Non dipendi da Internet e lavori comodamente in un’unica finestra.</li><li>Il menu contestuale è stato riprogettato. Nessun problema nel passare a un altro generatore: tutto è negli stessi punti ed è prevedibile.</li><li>Corretti i bug che causavano il crash dell’app nei generatori watabou.</li><li>Aggiunte varie piccole cose che migliorano la UX.</li><li>È stato aggiunto l’import (!!!!). Ora puoi salvare una mappa per riaprirla in futuro, o da un altro dispositivo, e continuare a modificarla.</li><li>Tutti i formati di esportazione sono descritti tramite protobuf, il che semplifica molto l’integrazione se qualcuno vuole usare le mappe generate nei propri prodotti.</li></ul><p>Questa pagina è nata come hobby del fine settimana; tutti i generatori sono stati scritti da <a href='https://{{PRIMARY_SOURCE}}' target='_blank'>watabou</a>, le modifiche e l’unificazione in un’unica pagina sono state fatte da <a href='https://{{GITHUB}}' target='_blank'>sunsung</a></p>"
+  "introHtml": "<p>Questa pagina è un hub compatto per diversi generatori procedurali di mappe e planimetrie. L’idea è semplice: aprire uno strumento, ottenere rapidamente un risultato, ritoccare i parametri se serve ed esportare per qualsiasi scopo.</p><p><strong>In che cosa questo hub è diverso dai generatori watabou?</strong></p><ul><li>È tutto disponibile localmente come PWA anche senza Internet; anche tutti i link sono interni. Non dipendi da Internet e lavori comodamente in un’unica finestra.</li><li>Il menu contestuale è stato riprogettato. Nessun problema nel passare a un altro generatore: tutto è negli stessi punti ed è prevedibile.</li><li>Corretti i bug che causavano il crash dell’app nei generatori watabou.</li><li>Aggiunte varie piccole cose che migliorano la UX.</li><li>È stato aggiunto l’import (!!!!). Ora puoi salvare una mappa per riaprirla in futuro, o da un altro dispositivo, e continuare a modificarla.</li><li>Tutti i formati di esportazione sono descritti tramite protobuf, il che semplifica molto l’integrazione se qualcuno vuole usare le mappe generate nei propri prodotti.</li></ul><p>Questa pagina è nata come hobby del fine settimana; tutti i generatori sono stati scritti da <a href='https://{{PRIMARY_SOURCE}}' target='_blank'>watabou</a>, le modifiche e l’unificazione in un’unica pagina sono state fatte da <a href='https://github.com/voluminor/maphub' target='_blank'>sunsung</a></p>"
 }

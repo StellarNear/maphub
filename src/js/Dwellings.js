@@ -3294,12 +3294,14 @@ var $lime_init = function (K, v) {
                     },
                     addItem: function (a, b, c) {
                         null == c && (c = !1);
+                        a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
                         a = new Zd(a, null, b);
                         a.setCheck(c);
                         this.add(a);
                         return a
                     },
                     addSubmenu: function (a, b) {
+                        a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
                         a = new Zd(a, b);
                         this.add(a);
                         return a
@@ -9446,6 +9448,11 @@ var $lime_init = function (K, v) {
             ub.prototype = w(Jb.prototype, {
                 activate: function () {
                     Jb.prototype.activate.call(this);
+                    var scene = this;
+                    globalThis.mapHubOpenMenu = function () {
+                        ma.hideMenu();
+                        scene.showContextMenu(10, 48);
+                    };
                     this.stage.addEventListener("touchTap", m(this, this.onTap));
                     this.stage.addEventListener("click", m(this, this.onClick));
                     this.stage.addEventListener("rightClick", m(this, this.onRightClick));
@@ -9453,6 +9460,7 @@ var $lime_init = function (K, v) {
                 },
                 deactivate: function () {
                     Jb.prototype.deactivate.call(this);
+                    globalThis.mapHubOpenMenu = null;
                     ma.layer.removeChild(this.modeSelector);
                     this.stage.removeEventListener("touchTap", m(this, this.onTap));
                     this.stage.removeEventListener("click", m(this, this.onClick));

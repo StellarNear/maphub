@@ -14257,12 +14257,14 @@ if (params !== null) (function (S, u) {
                 },
                 addItem: function (a, b, c) {
                     null == c && (c = !1);
+                    a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
                     a = new Hg(a, null, b);
                     a.setCheck(c);
                     this.add(a);
                     return a
                 },
                 addSubmenu: function (a, b) {
+                    a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
                     a = new Hg(a, b);
                     this.add(a);
                     return a
@@ -18885,6 +18887,11 @@ if (params !== null) (function (S, u) {
             Va.prototype = l(oe.prototype, {
                 activate: function () {
                     oe.prototype.activate.call(this);
+                    var scene = this;
+                    globalThis.mapHubOpenMenu = function () {
+                        Ma.hideMenu();
+                        scene.onContext(true);
+                    };
                     this.stage.showDefaultContextMenu = !1;
                     this.addEventListener("mouseDown", p(this, this.onMouseDown));
                     this.addEventListener("mouseUp", p(this, this.onMouseUp));
@@ -18896,6 +18903,7 @@ if (params !== null) (function (S, u) {
                 },
                 deactivate: function () {
                     oe.prototype.deactivate.call(this);
+                    globalThis.mapHubOpenMenu = null;
                     this.removeEventListener("mouseDown", p(this, this.onMouseDown));
                     this.removeEventListener("mouseUp", p(this, this.onMouseUp));
                     this.removeEventListener("mouseWheel", p(this, this.onWheel));
@@ -19100,7 +19108,7 @@ if (params !== null) (function (S, u) {
 
                     rootMenu.addItem("Fullscreen", p(this, this.toggleFullscreen), 2 != this.stage.get_displayState());
                     rootMenu.addItem("About", function () {null == Ma.findForm(AboutDialogForm) && Ma.showDialog(new AboutDialogForm)});
-                    Ma.showMenu(rootMenu)
+                    true === a ? Ma.showMenuAt(rootMenu, 10, 48) : Ma.showMenu(rootMenu)
 
                     // END //
                 },

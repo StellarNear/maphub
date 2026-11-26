@@ -50,7 +50,6 @@
       <a class="navlink" href="/api.html" id="navApi">API</a>
       <a class="navlink" href="https://{{GITHUB}}" target="_blank" rel="noopener" id="navCode">GitHub</a>
       <a class="navlink" href="https://{{PRIMARY_SOURCE}}" target="_blank" rel="noopener" id="navInspiration">Original source</a>
-      <a class="btn" href="mailto:{{AUTHOR}}" id="navFeedback">Email</a>
 
       <span class="lang" aria-label="Language">
         <label id="langLabelHead" for="langSelectHead">Language:</label>
@@ -93,7 +92,6 @@
 
       <div class="actions" aria-label="Secondary actions">
         <a class="btn" href="https://{{GITHUB}}" target="_blank" rel="noopener" id="nfRepoBtn">Open repository</a>
-        <a class="btn" href="mailto:{{AUTHOR}}" id="nfContactBtn">Contact</a>
       </div>
     </div>
   </section>
@@ -121,7 +119,6 @@
         <a class="btn" href="https://{{GITHUB}}" target="_blank" rel="noopener" id="footGitHub">GitHub</a>
         <a class="btn" href="https://{{PRIMARY_SOURCE}}" target="_blank" rel="noopener" id="footSource">Original source</a>
         <a class="btn" href="/api.html" id="footApi">API</a>
-        <a class="btn" href="mailto:{{AUTHOR}}" id="footFeedback">Email</a>
 
         <span class="lang" aria-label="Language">
           <label id="langLabelFoot" for="langSelectFoot">Language:</label>
@@ -142,7 +139,7 @@
   (function () {
     var I18N = {};
     var LANG_KEY = "lang";
-    var currentLang = "en";
+    var currentLang = "fr";
 
     function $(id) { return document.getElementById(id); }
 
@@ -336,6 +333,7 @@
       try { nav = normalizeLang(navigator.language || (navigator.languages && navigator.languages[0]) || ""); } catch (e) {}
       if (nav && I18N[nav]) { applyTexts(nav); return; }
 
+      if (I18N.fr) { applyTexts("fr"); return; }
       if (I18N.en) { applyTexts("en"); return; }
 
       var langs = getSupportedLangs();

@@ -191,7 +191,7 @@ function normalizeLang(code) {
 }
 
 var LANG_KEY = "lang";
-var currentLang = "en";
+var currentLang = "fr";
 var lastFocus = null;
 var modalCurrentGenId = null;
 
@@ -509,6 +509,7 @@ function isClickOutsideModal(evt) {
 }
 
 function getDefaultLang() {
+    if (I18N && I18N.fr) return "fr";
     if (I18N && I18N.en) return "en";
     for (var c in I18N) {
         if (I18N.hasOwnProperty(c)) return c;

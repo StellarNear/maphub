@@ -283,8 +283,8 @@ describe("bytesToUtf8Text", () => {
     });
 
     it("decodes Uint8Array to UTF-8", () => {
-        const bytes = new TextEncoder().encode("мир");
-        expect(bytesToUtf8Text(bytes)).toBe("мир");
+        const bytes = new TextEncoder().encode("été");
+        expect(bytesToUtf8Text(bytes)).toBe("été");
     });
 
     it("decodes ArrayBuffer", () => {

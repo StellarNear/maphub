@@ -16,7 +16,6 @@ export const TAGS = {
     "LICENSE": pkg.license,
     "HOMEPAGE": pkg.homepage,
     "GITHUB": pkg.github,
-    "AUTHOR": pkg.author,
     "PRIMARY_SOURCE": pkg.primary_source,
 
     "STYLE_COLOR_BACKGROUND": "#0b0f14",

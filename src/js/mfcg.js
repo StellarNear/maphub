@@ -3266,12 +3266,14 @@ var $lime_init = function (A, t) {
                 },
                 addItem: function (a, b, c) {
                     null == c && (c = !1);
+                    a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
                     a = new ff(a, null, b);
                     a.setCheck(c);
                     this.add(a);
                     return a
                 },
                 addSubmenu: function (a, b) {
+                    a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
                     a = new ff(a, b);
                     this.add(a);
                     return a
@@ -8614,7 +8616,8 @@ var $lime_init = function (A, t) {
             Ma.reset = function () {
                 if (null == Ma.grammar) {
                     Oe.rng = C.float;
-                    Ma.grammar = new hk(JSON.parse(ac.getText("grammar")));
+                    var grammar = JSON.parse(ac.getText("grammar"));
+                    Ma.grammar = new hk(globalThis.mapHubCityGrammar ? globalThis.mapHubCityGrammar(grammar) : grammar);
                     Ma.grammar.defaultSelector = $h;
                     Ma.grammar.addModifiers(jb.get());
                     var a = Ma.grammar,
@@ -8743,7 +8746,8 @@ var $lime_init = function (A, t) {
             };
             Ma.getDistrictNoun = function (a) {
                 a = a.faces.length + Math.floor((C.seed = 48271 * C.seed % 2147483647 | 0) / 2147483647 * 3);
-                return 2 >= a ? "quarter" : 6 > a ? "ward" : 12 > a ? "district" : "town"
+                var noun = 2 >= a ? "quarter" : 6 > a ? "ward" : 12 > a ? "district" : "town";
+                return globalThis.mapHubDistrictNoun ? globalThis.mapHubDistrictNoun(noun) : noun
             };
             Ma.getDirection = function (a) {
                 var b = null,
@@ -13441,12 +13445,20 @@ var $lime_init = function (A, t) {
                 },
                 activate: function () {
                     Pb.prototype.activate.call(this);
+                    var scene = this;
+                    globalThis.mapHubOpenMenu = function () {
+                        u.hideMenu();
+                        var menu = new dd;
+                        scene.onContext(menu);
+                        u.showMenuAt(menu, 10, 48);
+                    };
                     this.stage.set_color(K.colorPaper);
                     sb.preview ||
                     this.stage.addEventListener("rightClick", l(this, this.onRightClick))
                 },
                 deactivate: function () {
                     Pb.prototype.deactivate.call(this);
+                    globalThis.mapHubOpenMenu = null;
                     ia.map = null;
                     this.stage.removeEventListener("rightClick", l(this, this.onRightClick))
                 },

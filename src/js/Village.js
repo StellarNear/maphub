@@ -3153,12 +3153,14 @@ var $lime_init = function (E, u) {
                 },
                 addItem: function (a, b, c) {
                     null == c && (c = !1);
+                    a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
                     a = new Qe(a, null, b);
                     a.setCheck(c);
                     this.add(a);
                     return a
                 },
                 addSubmenu: function (a, b) {
+                    a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
                     a = new Qe(a, b);
                     this.add(a);
                     return a
@@ -16034,6 +16036,13 @@ var $lime_init = function (E, u) {
                 activate: function () {
                     fc.preview || (Ob.prototype.activate.call(this), this.addEventListener("touchTap", r(this, this.onTap)), this.addEventListener("rightClick", r(this, this.onRightClick)), this.addEventListener("mouseDown", r(this, this.onMouseDown)), this.longPress =
                         new Ig(this))
+                    if (!fc.preview) {
+                        var scene = this;
+                        globalThis.mapHubOpenMenu = function () {
+                            w.hideMenu();
+                            scene.showContextMenu(true);
+                        };
+                    }
                 },
                 layout: function () {
                     this.view.setSize(this.rWidth, this.rHeight);
@@ -16127,11 +16136,11 @@ var $lime_init = function (E, u) {
                 toggleFullscreen: function () {
                     this.stage.set_displayState(2 == this.stage.get_displayState() ? 1 : 2)
                 },
-                showContextMenu: function () {
+                showContextMenu: function (fromButton) {
                     var contextThis = this;
                     var rootMenu = new Qc;
 
-                    var posMouse = this.village.findBuilding(new I(contextThis.view.map.get_mouseX(), contextThis.view.map.get_mouseY()));
+                    var posMouse = fromButton ? null : this.village.findBuilding(new I(contextThis.view.map.get_mouseX(), contextThis.view.map.get_mouseY()));
                     if (null != posMouse) {
                         rootMenu.addItem("Open in Dwellings", r(posMouse, posMouse.open));
                         var buildObj = this.village.buildings.indexOf(posMouse);
@@ -16199,7 +16208,7 @@ var $lime_init = function (E, u) {
 
                     rootMenu.addItem("Fullscreen", r(this, this.toggleFullscreen), 2 != this.stage.get_displayState());
                     rootMenu.addItem("About", function () {null == w.findForm(AboutDialogForm) && w.showDialog(new AboutDialogForm)});
-                    w.showMenu(rootMenu)
+                    fromButton ? w.showMenuAt(rootMenu, 10, 48) : w.showMenu(rootMenu)
 
                     // END //
 

@@ -1,130 +1,65 @@
 # Fantasy MapHub Generators
 
-[Перейти к Русской версии](./README.RU.md)
+Fantasy MapHub rassemble plusieurs générateurs procéduraux de cartes et de plans : villes médiévales fantastiques, villages, bâtiments, grottes et clairières, ainsi qu'une visionneuse 3D.
 
-## Technical details
+## Origine et attribution
 
-### Build and deployment
+Les générateurs sont issus des travaux de [Watabou](https://watabou.github.io/). Ce dépôt reprend une version adaptée et réunie par [voluminor (sunsung)](https://github.com/voluminor/maphub), qui a notamment ajouté des fonctions d'édition, d'import et d'export. Le présent projet poursuit ce travail.
 
-To build, run `npm run build` — the project will be built into the `dist` folder.
+## Utilisation
 
-To make it available locally in your browser, run `npm run preview`.
+Ouvrez un générateur depuis l'accueil. Son menu contextuel donne accès à la génération, aux réglages et aux exports. Les cartes peuvent être utilisées hors connexion après installation de l'application web, sous réserve que les ressources nécessaires aient été mises en cache.
 
-For deployment on a server, copy the contents of the `dist` folder to the web root.
+Les formats disponibles dépendent du générateur : images PNG ou SVG, données JSON ou Protobuf, et OBJ pour la visionneuse 3D. L'import d'une carte éditable dans les générateurs de ville et de village nécessite un export étendu : les anciens exports de Watabou ne contiennent pas toutes les données nécessaires à la reprise de l'édition.
 
-### Other notes
+Le français est proposé par défaut ; le sélecteur permet de retrouver les libellés anglais. Les menus principaux sont traduits, mais certaines fenêtres et certains textes des générateurs restent en anglais. Dans les générateurs, changer de langue recharge la page : exportez votre travail avant de confirmer. Les noms des quartiers créés dans le générateur de villes suivent la langue choisie ; les cartes importées conservent leurs noms.
 
-This project is built from predefined values and page templates; to make changes, it’s enough to work with these files:
+### Principales évolutions de la version reprise
 
-- [package.json](./package.json)
-- [static.config.mjs](./static.config.mjs)
-- [pages.config.mjs](./pages.config.mjs)
+- Ressources locales et application web installable, pour une utilisation possible hors connexion.
+- Menus contextuels harmonisés, liens permanents et mode plein écran.
+- Ouverture des villes et villages dans la visionneuse 3D.
+- Import et export Protobuf, avec maintien des anciens formats JSON.
+- Messages d'import plus explicites, indicateurs pour les exports longs et noms de fichiers différenciés.
+- Outils supplémentaires, notamment la molette dans les générateurs de villes et de bâtiments et une règle avancée pour les villes.
+- Documentation des paramètres via la page API et corrections de divers problèmes.
 
-If needed, you can “cut out” only one specific generator — at the code level they are self-contained and independent of their neighbors.
+L'objectif à long terme est de disposer d'un ensemble autonome pour décrire un monde à différentes échelles, de la planète aux maisons, clairières et grottes. Les pistes déjà envisagées sont :
 
-Data handling follows a proto-first approach, while keeping support for older JSON export formats. If you plan to create your own solution using this generator, I recommend relying only on binary proto files, because JSON import/export is primarily focused on supporting older variants and the original watabou generators. Proto files, in turn, guarantee long-term support even if new functionality is added — old saved files will be supported in new versions without losing backward compatibility.
+- Ajouter l'export des grottes et clairières.
+- Ajouter une visualisation 3D des bâtiments, séparée ou intégrée à la visionneuse.
+- Ajouter des liens vers les grottes, clairières et bâtiments depuis les générateurs de villes et villages, puis relier ces générateurs entre eux.
+- Permettre une construction séparée ou ajouter directement à l'application une liste de cartes et de palettes enregistrées.
 
-Import only works with the extended export format — older exported files (watabou export) won’t open for editing in MFCG, because those files don’t contain the fields required to restore a map for editing.
+L'import et l'export des palettes en Protobuf, ainsi que l'export étendu des noms et étiquettes, font partie des évolutions déjà réalisées dans la version reprise.
 
-### Generating binary files
+## Développement
 
-All binary files are generated from proto files located in the [protobuf](./protobuf) directory.
+- [Démarrage local](./start_guide.md)
+- [Architecture](./architecture.md)
+- [Publication](./publish.md)
 
-Import accepts both raw binary proto objects from root structures and objects wrapped in a typed envelope with CRC32.
+La configuration des pages et des métadonnées se trouve dans [pages.config.mjs](./pages.config.mjs), [static.config.mjs](./static.config.mjs) et [package.json](./package.json). Chaque générateur est autonome.
 
-The envelope follows a simple format: `|DataType uint32|{protobuf binary}|crc32IEEE({protobuf binary})`
+### Formats binaires
 
-Type identifiers are also defined in proto: [DataType](./protobuf/data/enum.proto)
+Les structures Protobuf sont définies dans [protobuf](./protobuf). L'import accepte les objets binaires bruts ainsi que les objets enveloppés au format `|DataType uint32|{protobuf binaire}|crc32IEEE({protobuf binaire})`. Les identifiants sont définis dans [DataType](./protobuf/data/enum.proto).
 
-Root structures:
+Structures principales : [GeoObj](./protobuf/data/geo/obj.proto), [DwellingsObj](./protobuf/data/dwellings/obj.proto) et les palettes [ville](./protobuf/data/palette/mfcg.proto), [village](./protobuf/data/palette/village.proto), [bâtiments](./protobuf/data/palette/dwellings.proto), [visionneuse](./protobuf/data/palette/viewer.proto), [grotte](./protobuf/data/palette/cave.proto) et [clairière](./protobuf/data/palette/glade.proto). Le format Protobuf est recommandé pour les nouvelles intégrations ; JSON conserve notamment la compatibilité avec les anciens formats.
 
-- [GeoObj](./protobuf/data/geo/obj.proto)
-- [DwellingsObj](./protobuf/data/dwellings/obj.proto)
-- [PaletteMfcgObj](./protobuf/data/palette/mfcg.proto)
-- [PaletteVillageObj](./protobuf/data/palette/village.proto)
-- [PaletteDwellingsObj](./protobuf/data/palette/dwellings.proto)
-- [PaletteViewerObj](./protobuf/data/palette/viewer.proto)
-- [PaletteCaveObj](./protobuf/data/palette/cave.proto)
-- [PaletteGladeObj](./protobuf/data/palette/glade.proto)
+## Galerie
 
-## About the project
+![Menus des générateurs](.github/img/all-menu.png)
 
-This project brings together the map generators by [watabou](https://github.com/watabou/) that he published at [watabou.github.io](https://watabou.github.io). Not all of them are publicly available, and even what is available is written in a not-so-popular language.
+![Menu des grottes](.github/img/to_cave.png)
+![Menu des bâtiments](.github/img/to_dwellings.png)
+![Menu des villages](.github/img/to_village.png)
+![Menu des villes](.github/img/to_mfcg.png)
+![Menu de la visionneuse](.github/img/to_viewer.png)
 
-I took the web version implemented in JS and made many changes to it.
+![Application installée sur téléphone](.github/img/mob_app.jpg)
+![Exemple de carte sur mobile](.github/img/mob_city.jpg)
 
-The work is not finished yet; the final goal is to get a fully self-contained generator and editor that requires no external resources and can conveniently describe an entire world, from a high level (planet) down to a low level (houses, clearings, and caves).
+## Contribution et licence
 
-### What was changed overall:
-
-- These generators are now fully local. That is, they can work without the internet: all connections are internal, and the downloaded files are included in the project.
-- Maximum automation has been implemented. You can conveniently assemble everything for your use case by interacting only with constructors and JSON parameters.
-- `openapi.json` has been created for the generators; it’s available directly via RapiDoc.
-- I changed the serialisation approach, making it proto-first.
-- I added import/export to a binary file: pure protobuf (import for MFCG and Village only works with extended export files, because the standard ones aren’t enough to restore a map for editing). Backward compatibility is preserved.
-- Context menus have been standardised so that items across generators are in the same places and have the same names. Groups were reorganised to improve the UI as much as possible. Functionality was also added for generators that didn’t have it (`Permalink...`, `Fullscreen`).
-- I added the ability to open cities and villages directly in the 3D viewer (`View in 3D`).
-- Dialogs have been made more user-friendly (for example, it now clearly reports what the issue is during import). Loading indicators were also added for heavy operations such as PNG export.
-- I added prefixes for exported files (`*.palette.mf.json`, `*.mf.json`) so it’s clear what relates to what without looking inside.
-- Many small edge-case bugs were fixed.
-- New functionality was added (mouse-wheel handling in MFCG and Dwellings, and an advanced ruler for MFCG).
-- I published it as a separate [web resource](https://maphub.webtools.download), including a [PWA](https://en.wikipedia.org/wiki/Progressive_web_app), which makes it possible to install it as an app that doesn’t need the internet.
-
-### Plans for the future:
-
-- ~~Move palette import/export to proto.~~
-- Add export for Cave/Glade Generator.
-- ~~Add the ability to import schemes from a file for all generators except City Viewer (since City Viewer already has import).~~
-- Add a 3D visualizer for buildings (separate or just extend City Viewer functionality).
-- ~~Add an advanced export mode that transfers names, labels, and other fields.~~
-- Add generation of Cave/Glade pointers in Medieval-Fantasy-City/Village Generator.
-- After advanced export, it will be possible to link Cave/Glade/Dwellings Generator and Medieval-Fantasy-City/Village Generator.
-- Make it separately buildable or extend the current build with a list of saved maps and palettes directly in the app.
-
-## Gallery
-
-### All context menus in one image
-
-![all\-menu](.github/img/all-menu.png)
-
-### How the context menu changed
-
-#### Cave/Glade Generator
-
-![to\_cave](.github/img/to_cave.png)
-
-#### Dwellings Generator
-
-![to\_dwellings](.github/img/to_dwellings.png)
-
-#### Village Generator
-
-![to\_village](.github/img/to_village.png)
-
-#### Medieval-Fantasy-City Generator
-
-![to\_mfcg](.github/img/to_mfcg.png)
-
-#### City Viewer
-
-![to\_viewer](.github/img/to_viewer.png)
-
-### Example of an installed app
-
-#### Installed on a phone: a separate icon, works even without the internet
-
-![to\_village](.github/img/mob_app.jpg)
-
-#### Example of working without the internet
-
-![to\_village](.github/img/mob_city.jpg)
-
-## CONTRIBUTING
-
-If you want to join or just fix a bug — send a pull request with a description.
-
-## LICENSE
-
-The source code is published under MPL-2.0.
-
-Contact email: [mail@sunsung.fun](mailto:mail@sunsung.fun).
+Les contributions sont bienvenues sous forme de pull requests décrivant les modifications. Le code est publié sous [MPL-2.0](./LICENSE).

@@ -96,6 +96,15 @@ function collectProtoFiles(rootDir) {
 }
 
 function resolvePbjs() {
+    // Invoke the JavaScript entry point directly: Windows cannot spawn .cmd
+    // files without a shell on recent Node versions.
+    const cliBinDir = join(PROJECT_ROOT, DIR_NODE_MODULES, TOOL_PBJS_CLI_PACKAGE, DIR_TOOL_BIN);
+    const p1 = join(cliBinDir, TOOL_PBJS);
+    const p2 = join(cliBinDir, `${TOOL_PBJS}${EXT_JS}`);
+
+    if (existsSync(p1)) return { cmd: process.execPath, prefix: [p1] };
+    if (existsSync(p2)) return { cmd: process.execPath, prefix: [p2] };
+
     const isWin = process.platform === 'win32';
     const binName = isWin ? `${TOOL_PBJS}${TOOL_PBJS_WIN_SUFFIX}` : TOOL_PBJS;
     const binPath = join(PROJECT_ROOT, DIR_NODE_MODULES, DIR_BIN, binName);
@@ -103,13 +112,6 @@ function resolvePbjs() {
     if (existsSync(binPath)) {
         return { cmd: binPath, prefix: [] };
     }
-
-    const cliBinDir = join(PROJECT_ROOT, DIR_NODE_MODULES, TOOL_PBJS_CLI_PACKAGE, DIR_TOOL_BIN);
-    const p1 = join(cliBinDir, TOOL_PBJS);
-    const p2 = join(cliBinDir, `${TOOL_PBJS}${EXT_JS}`);
-
-    if (existsSync(p1)) return { cmd: process.execPath, prefix: [p1] };
-    if (existsSync(p2)) return { cmd: process.execPath, prefix: [p2] };
 
     fail(ERR_PBJS_NOT_FOUND);
 }

@@ -5706,6 +5706,11 @@ var $lime_init = function (A, r) {
                 },
                 activate: function () {
                     Kd.prototype.activate.call(this);
+                    var scene = this;
+                    globalThis.mapHubOpenMenu = function () {
+                        Fa.hideMenu();
+                        scene.showMenu(false, true);
+                    };
                     this.stage.set_color(this.getBgColor());
                     this.addEventListener("touchTap", l(this,
                         this.onTap));
@@ -5714,6 +5719,7 @@ var $lime_init = function (A, r) {
                 },
                 deactivate: function () {
                     Kd.prototype.deactivate.call(this);
+                    globalThis.mapHubOpenMenu = null;
                     this.removeEventListener("touchTap", l(this, this.onTap));
                     this.stage.removeEventListener("rightClick", l(this, this.onRightClick));
                     this.longPress.stop()
@@ -5798,7 +5804,7 @@ var $lime_init = function (A, r) {
                     this.addChild(this.title);
                     this.layout()
                 },
-                showMenu: function (a) {
+                showMenu: function (a, fromButton) {
                     var contextThis = this;
                     var rootMenu = new Yc;
                     a && (rootMenu.addItem("Rename...", l(this, this.editName)), rootMenu.addSeparator());
@@ -5847,7 +5853,7 @@ var $lime_init = function (A, r) {
                     rootMenu.addItem("About", function () {
                         null == Fa.findForm(AboutDialogForm) && Fa.showDialog(new AboutDialogForm)
                     });
-                    Fa.showMenu(rootMenu);
+                    fromButton ? Fa.showMenuAt(rootMenu, 10, 48) : Fa.showMenu(rootMenu);
 
                     // END //
 
@@ -7307,12 +7313,14 @@ var $lime_init = function (A, r) {
                 },
                 addItem: function (a, b, c) {
                     null == c && (c = !1);
+                    a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
                     a = new eg(a, null, b);
                     a.setCheck(c);
                     this.add(a);
                     return a
                 },
                 addSubmenu: function (a, b) {
+                    a = globalThis.mapHubTranslateMenu ? globalThis.mapHubTranslateMenu(a) : a;
                     a = new eg(a, b);
                     this.add(a);
                     return a
